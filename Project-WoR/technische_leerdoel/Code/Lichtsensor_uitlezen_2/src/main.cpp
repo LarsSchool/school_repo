@@ -72,7 +72,6 @@ void printLightSensorValue(unsigned short mappedValue)
 
 void checkLightSensor(void *parameter)
 {
-  UBaseType_t stackHighWaterMark;
 
   Serial.print("LightTask is running on core ");
   Serial.println(xPortGetCoreID());
@@ -94,7 +93,7 @@ void checkLightSensor(void *parameter)
 
       Serial.println();
 
-      if (analogValue >= 4090)
+      if (analogValue >= 4090 || analogValue <= 150)
       {
         xTaskCreatePinnedToCore(activateEmergencyStop, "activateEmergencyStop", 1024, NULL, 100, &emergencyStopHandle, 1);
       }
