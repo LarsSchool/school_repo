@@ -1,0 +1,226 @@
+/* module-key = 'ch.mibex.confluence.include:include-for-confluence-file-handler', location = '/css/include.css' */
+.panel-content {
+    color: #333;
+    margin: 0;
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    background: #fff;
+    overflow: hidden;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.width-full {
+    width: 100% !important
+}
+
+.float-left {
+    float: left !important
+}
+
+.float-right {
+    float: right !important
+}
+
+.row-padding {
+    padding: 8px !important
+}
+
+.special-line-height {
+    line-height: 1.25 !important
+}
+
+.special-margin {
+    margin-top: 4px !important
+}
+
+.text-small {
+    font-size: 12px !important
+}
+
+.text-gray {
+    color: #767676 !important
+}
+
+.author-link {
+    color: #767676 !important
+}
+
+.author-link:hover {
+    color: #4078c0 !important;
+    text-decoration: none
+}
+
+.entity-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 600 !important;
+}
+
+.no-underline {
+    text-decoration: none !important
+}
+
+.link-gray-dark {
+    color: #333 !important
+}
+
+.link-gray-dark:hover {
+    color: #4078c0 !important
+}
+
+.panelHeader .include-copy-button {
+    top: 5px;
+    cursor: pointer;
+}
+
+.panelHeader .button-right {
+    float: right;
+}
+
+.panelHeader .collapse-rendered {
+    right: 15px;
+    position: absolute;
+    top: 5px;
+    float: right;
+    cursor: pointer;
+}
+
+.panel-content.show-border-top {
+    border-top: 1px solid #cccccc;
+}
+
+.include4confluence img {
+    max-width: 100%;
+}
+
+.table tr.row > td {
+    vertical-align: middle;
+}
+.table td.title {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-width: 125px;
+    max-width: 150px;
+}
+.table .message {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-flex: 0 100000 auto;
+    flex: 0 100000 auto;
+    min-width: 5em;
+    max-width: 35em;
+}
+.table.no-rows + .paged-table-message .empty-banner-content {
+    margin-top: 30px;
+}
+.paged-table-message {
+    color: #999;
+    padding: 10px 10px 0;
+    text-align: center;
+}
+.flex-content--primary {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.flex-content {
+    display: flex;
+}
+.list .list--row {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1 100000 auto;
+    white-space: normal;
+}
+.aui-avatar {
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+.aui-avatar-inner {
+    vertical-align: middle;
+}
+.aui-avatar img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+.table .user-avatar {
+    margin-right: 5px;
+}
+.table {
+    max-width: 60%;
+}
+
+#markdown table {
+    margin: 16px 0;
+    border-collapse: collapse;
+}
+
+#markdown th,
+#markdown td {
+    border: 1px solid #dcdcde;
+    padding: 10px 16px;
+    line-height: 20px;
+    vertical-align: top;
+}
+
+#markdown th {
+    border-bottom: solid 2px #bfbfc3;
+    background-color: #fbfafd;
+}
+
+#markdown details summary {
+    cursor: pointer;
+    margin: 16px 0;
+}
+
+#markdown summary {
+    display: list-item;
+}
+
+.include-copy-button {
+    float: right;
+}
+
+.collapse-expand-toggle {
+    float: right;
+}
+
+#collapse-expand-summary {
+    cursor: pointer;
+    color: #0052CC;
+    list-style: none;
+    display: list-item;
+}
+
+#collapse-expand-summary:hover {
+    text-decoration: underline;
+}
+
+#collapse-expand-summary::-webkit-details-marker {
+    display: none;
+}
+
+#collapse-expand-summary:before {
+    border: transparent;
+}
+
+
+
+

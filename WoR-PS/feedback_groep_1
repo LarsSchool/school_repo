@@ -1,0 +1,72 @@
+Spoiler: excuses voor informeel of vrij direct taalgebruik, ik kan gefrustreerd raken tijdens reviewen :).
+
+0. Heel het document
+Waarom is er door heel het document ", en" gebruikt, dit is 18 keer gedaan en is gewoon fout. Zie https://onzetaal.nl/taalloket/komma-voor-en voor uitleg.
+
+
+1. Inleiding
+Draagvlak creeëren is al onderzocht in onderzoek rollen & testen, waarom wordt dat hier benoemd? Dit komt ook niet terug in de deelvragen??
+
+2. Onderzoeksmethodiek
+Eerste regel, "van van"
+
+Kan je niet meerdere methodieken hebben per deelvraag? Het komt nu over alsof je er maar 1 hebt gekozen zonder uitleg, dat je daar gewoon vanuit bent gegaan.
+
+Deelvraag 1: Waarom wordt er 3 keer herhaald dat jullie vorige projecten ook gebruikt hebben? Dit leest echt slecht door. 
+
+Verder, ervaring uit vorige projecten is ook een onderzoeksmethodiek? Zie Best good and bad practices.
+Dit laatste geldt voor alle deelvragen.
+
+Deelvraag 7: Uniforme manier samenwerken? wat? wist niet dat dat bestond XD.
+
+
+3. Deelvragen
+Vind het onduidelijk waarvoor het onderzoeksrapport nou dient, voor onderzoeken?Templates zijn wel goed uitgelegd waarom, maar alleen ondersteuning betekent dus dat het allemaal optioneel is? Het onderzoek dat hier naar onderzoekt voldoet ook niet aan de onderzoeksstandaard, wat mij verteld dat dit optioneel is. Of zijn deze standaarden maar een startpunt en geen verplichting?
+
+
+Deelvraag 3.2: Waarom zijn de kopjes 3.2.1.3 3., ??? die 1 kan weg en waarom 2 keer 3? Verkeerde header gebruikt ook ofzo?
+
+kopje 4: code reviews en statische analyse, wat zijn "lintingregels"?
+
+
+3.3 
+"Koppellen" moet koppelen zijn.
+
+Waarom procesmanager? Zijn de software architecten hier niet ook veel mee bezig??
+
+"Gemakkellijk" moet gemakkelijk zijn.
+"De gemaakte uren" moet "het gemaakte uren" zijn
+
+Waarom moet de projectleider en planner zich bezig houden met de kwaliteit? Dit is toch iets van de kwaliteitsmanager??
+
+"het hele het ontwikkelteam", wat is dit dan voor een zin jongens, niet normaal.
+
+
+3.4 
+Over het algemeen ziet het er gegenereerd uit, dus met ome Chat. Als dit zo is, alsjeblieft, kunnen jullie iets... Zelfs MET chatgpt is *alles* wat er staat incorrect en in conflict met het onderzoek naar de rollen... Dus met hulpmiddelen hebben jullie het alsnog voor elkaar gekregen om het meest nietszeggende en incorrecte hoofdstuk van heel het onderzoek te maken...
+Verder zijn dit andere rollen dan wat er in het onderzoek naar de rollen staat?
+Planner en contactpersoon??? Mediator en notulist apart?
+WTF hebben jullie hier uitgespookt jongens...
+De deelvraag gaat over verantwoordelijkheden bij het bewaken van de kwaliteit. Helaas is alle informatie eronder nietszeggend, incorrect of beide, waardoor je alsnog geen goed overzicht van de verantwoordelijkheden hebt...
+
+
+3.4.1: Projectleider mag tijd en middelen toewijzen? Wat? Wat doet de planner dan??
+De projectleider coördineert toch niks tussen de testmanager en kwaliteitsmanager? mag hopen dat ze zit zelf wel kunnen... Daarnaast, wat wordt er uberhaupt gecoördineerd?
+
+3.4.2: Kwaliteitsmanager is niet verantwoordelijk voor documentkwaliteit... Waarom moet de kwaliteitsmanager in zijn eentje de documentatie bijhouden?? he???
+Lees het onderzoek naar de rollen alsjeblieft eens door...
+
+3.4.3: Testmanager verantwoordelijk voor code? niet voor testen? Wat is dit voor een onzin. Het testen zorgt voor hogere codekwaliteit, de testmanager controleert of dit goed gaat...
+Goede codekwaliteit vertaald zich naar betere prestaties van de robotarm, maar wtf heeft de testmanager hiermee te maken?????
+
+3.4.4: 1 + 1 = 3 is ook nikszeggend, net zoals dit hele kopje.
+
+3.4.5: Contactpersoon hoort bij projectleider, verder is de opdrachtgever ook belangrijk??? Heeft deze niks te zeggen over de kwaliteit?
+
+3.4.6: 1 + 1 = 4 ineens? whut dat wist ik niet.
+
+3.4.7: Notulist documenteert toch geen testresultaten??? Hè? Wat staat hier allemaal...
+
+3.4.8: Kan beter door meer in te gaan op de verantwoordelijkheden hiervoor.
+
+3.4.9: Wtf is robuust?? Dit zijn verantwoordelijkheden, dus dit moet specifieker. 1 + 1 = 5? Weer iets nieuws!

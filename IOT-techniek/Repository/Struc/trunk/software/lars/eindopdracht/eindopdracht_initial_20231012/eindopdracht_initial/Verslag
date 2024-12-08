@@ -1,0 +1,52 @@
+Beoordeling code-kwaliteit a.d.h.v. 10 regels
+
+Regel 1: Gebruik eenvoudige controlestructuren en vermijd recursie voor betere analyse en helderheid. Gebruik geen goto, setjmp of longjmp constructies.
+De code houdt zich hier wel aan, want er zijn geen functies met recursie en de ncontrolestructuren zijn nog redelijk eenvoudig.
+
+Regel 2: Stel een bovengrens vast voor alle lussen om oneindige loops te voorkomen.
+De code houdt zich hier niet aan, omdat er mogelijk oneindige loops bestaan.
+Dit zou best wel lang duren om wel aan te houden, omdat alle loops aangepast moeten worden hiervoor.
+
+Regel 3: Gebruik geen dynamische geheugenallocatie na initialisatie om problemen te voorkomen.
+De code houdt zich hier ook niet aan, omdat de circulaire buffer grootte tijdens initialisatie aangepast kan worden.
+Je zou hiervoor de gehele buffercode anders moeten schrijven, wat ook behoorlijk lang zou duren.
+
+Regel 4: Houd functies kort, meestal niet meer dan één pagina oftewel 60 regels.
+Dankzij de HTTP functies, parser en tokenizer wordt hier niet aan voldaan.
+Om hieraan te voldoen zou de gehele HTTP code opgedeeld moeten worden, waar je wel even mee bezig bent.
+
+Regel 5: Voeg minimaal 2 assertions per functie toe om alles te controleren.
+Hier wordt grotendeels aan gehouden dankzij de unittests, maar de zelfgemaakte functies voldoen hier niet aan. Dit zou niet zo veel tijd kosten om te fixen, want het zijn maar 2 asserts per functie.
+
+Regel 6: Declareer data-objecten op het kleinste toegestane niveau van scope voor betere data-hiding.
+Hier wordt aan gehouden, omdat het in structs gaat waar andere code niet zo snel bij komt.
+
+Regel 7: Controleer de retourwaarden van alle non-void functies en of de parameters kloppen.
+Hier wordt niet aan gehouden. Om hier aan te voldoen moeten alle functies aangepast worden en dit zou enorm veel tijd kosten.
+
+Regel 8: Beperk het gebruik van de preprocessor tot includen van header files en simpele macro definities.
+Hier wordt aan gehouden, omdat de preprocessor alleen kleine defines uitvoert, zoals bijvoorbeeld de NDEBUG.
+
+Regel 9: Beperk het gebruik van pointers zodat er geen complexe structuren van meerdere dereference lagen komen.
+Hier voldoet de code wel aan, omdat er nooit een pointer naar een pointer gebruikt.
+
+Regel 10: Compileer code altijd met alle waarschuwingen ingeschakeld en gebruik statische codeanalyse dagelijks. Alle code moet zonder waarschuwingen kunnen compileren.
+Hier voldoet de code niet aan, omdat er wel veel waarschuwingen weergeven worden en niks wordt verborgen, maar er kunnen nog meer waarschuwingen weergeven worden.
+Ook zijn er warnings die niet weg te werken zijn zonder een supress, dus wordt deze regel altijd overschreden.
+Deze regel kan niet aan voldaan worden als je ook de information warnings weg wilt halen.
+
+7.1
+1. Sensoren
+Als sensoren gebruik ik pinouts van de microcontroller.
+Deze meten beide dezelfde eenheid en kunnen hierdoor makkelijk vergeleken worden.
+
+2. Stappenplan
+Laten slagen unittests
+Sensoren toevoegen
+Sensoren uitlezen
+Sensorwaardes opsturen
+Sensorwaardes opslaan 
+
+
+
+

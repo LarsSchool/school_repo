@@ -1,0 +1,50 @@
+{
+	"folders": [
+		{
+			"path": "../../../.."
+		},
+		{
+			"name": "Assembly_opdracht",
+			"path": "../../techniek/lars/W2/L2/Assembly_opdracht"
+		},
+		{
+			"name": "Eigen_lampjes_circuit",
+			"path": "../../techniek/lars/W2/L2/Eigen_lampjes_circuit"
+		},
+		{
+			"name": "Opdracht_4_Platform_IO",
+			"path": "../../techniek/lars/W4/L1/Opdracht_4_Platform_IO"
+		},
+		{
+			"name": "Opdracht_1",
+			"path": "../../techniek/lars/W4/L2/Opdracht_1"
+		},
+		{
+			"name": "Opdracht_2",
+			"path": "../../techniek/lars/W4/L2/Opdracht_2"
+		},
+		{
+			"name": "ATtiny_opdracht_1",
+			"path": "../../techniek/lars/W4/L3/ATtiny_opdracht_1"
+		},
+		{
+			"name": "Speck code PlatformIo",
+			"path": "../../techniek/lars/W5/L3/Speck code PlatformIo"
+		},
+		{
+			"name": "AES",
+			"path": "../../techniek/lars/W5/L3/AES"
+		},
+		{
+			"name": "Arduino_code",
+			"path": "eindopdracht/eindopdracht_initial_20231012/eindopdracht_initial/Arduino_code"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"Opdracht_2.C": "cpp",
+			"stdint.h": "c",
+			"circularbuffer.h": "c"
+		}
+	}
+}

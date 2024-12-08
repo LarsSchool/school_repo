@@ -1,0 +1,19 @@
+CFLAGS=-std=c99 -Wall `pkg-config --cflags glib-2.0`
+
+LDLIBS=`pkg-config --libs glib-2.0`
+
+all: fmt check build clean
+
+build: cbuff/circularbuffer unittests
+	valgrind cbuff/circularbuffer
+
+unittests: unittests.c
+
+fmt:
+	clang-format -i cbuff/circularbuffer.c cbuff/circularbuffer.h
+
+clean:
+	-rm circularbuffer
+	-rm unittest
+check:
+	cppcheck -q --enable=all --inconclusive --std=c99 cbuff/circularbuffer.c cbuff/circularbuffer.h

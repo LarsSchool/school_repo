@@ -1,0 +1,9 @@
+Als rol heb ik gekozen voor opdrachtsmanager.
+
+Verantwoordelijkheden: Deze rol is verantwoordelijk voor het afstellen van het project met de opdrachtgevers. Hierbij vind ik ook nog dat deze rol verantwoordelijk is voor het leiden van de ceremonies en het langsgaan van iedereen voor een check.
+
+Momenten waarop de rol actief is: Tijdens vergaderingen/ DSU's, overleggen met de opdrachtgevers (Reviews en Planningen) en gedeeltelijk door het project om te zien hoever het project is.
+
+Verantwoordelijkheden SCRUM artefacten: Deze rol is verantwoordelijk voor het organiseren van een Sprint Review en een Sprint Retrospective (of soortgelijke dingen, zoals demonstraties en andere presentaties/ evaluaties). Daarnaast is deze rol verantwoordelijk voor het goed overleggen, notuleren en maken van de backlogs mét de groep, dus de hele groep is verantwoordelijk voor het eindresultaat. Als laatste is deze rol tijdens de Sprints verantwoordelijk voor de DSU's of andere vergaderingen.
+
+Schatting tijd: Ligt eraan welke dag het is, maar op een normale dag zou ik ongeveer 1 uurtje zeggen. Op dagen waarbij retrospectives ofzo gehouden moeten worden wel een stuk meer, misschien wel de heft van de tijd.

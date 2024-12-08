@@ -1,0 +1,23 @@
+{
+    "Vaatwasser uitruimen": {
+        "ID": 1,
+        "titel": "Vaatwasser uitruimen",
+        "beschrijving": "Alles uit de vaatwasser halen en opruimen.", 
+        "datum-uiterlijk-afgerond": "05-02-2024", 
+        "done": false
+    },
+    "Sputnik lanceren": {
+        "ID": 2,
+        "titel": "Sputnik lanceren",
+        "beschrijving": "Een Russische satelliet de ruimte in lanceren.", 
+        "datum-uiterlijk-afgerond": "04-10-1957", 
+        "done": true
+    } ,
+    "Eli irriteren": {
+        "ID": 3,
+        "titel": "Eli irriteren",
+        "beschrijving": "Idk hoe, gewoon irriteren", 
+        "datum-uiterlijk-afgerond": "asap", 
+        "done": false
+    } 
+}

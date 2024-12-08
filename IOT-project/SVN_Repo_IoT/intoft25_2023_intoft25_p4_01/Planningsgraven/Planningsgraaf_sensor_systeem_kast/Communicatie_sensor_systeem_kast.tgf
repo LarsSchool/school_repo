@@ -1,0 +1,26 @@
+1 Onderzoek doen microcontrollers
+2 Onderzoeken hoe een DAC werkt
+3 Software verkrijgen om een ECG signaal te produceren
+4 Opstelling maken van 2 Arduino's via analoge pinnen
+5 ECG-frequentie bepalen
+6 ECG versturen van de Mock-Arduino naar de andere Arduino
+7 CAN-opstelling maken 
+8 Opstellen CAN-bericht
+9 Onderzoeken hoe de ECG over de CAN gaat
+10 Versturen CAN-bericht
+11 Ontvangen CAN-bericht
+12 ECG-grafiek plotten vanuit een CAN signaal
+#
+1 7
+1 8
+1 9
+2 4
+3 5
+4 6
+5 6
+7 10
+8 10
+9 10
+10 11
+6 12
+11 12

@@ -1,0 +1,44 @@
+{
+    "Todo": [{
+        "id": 1,
+        "titel" : "Huiswerk maken",
+        "description" : "IOT-SW 2.3.2.1",
+        "date" : "2024-02-06 9:00",
+        "done" : false
+    }, 
+    {
+        "id": 2,
+        "titel" : "SSH repareren",
+        "description" : "Thuis op de bank",
+        "date" : "2024-02-05 18:00",
+        "done" : false
+    },
+    {
+        "id": 3,
+        "titel" : "NGINX installeren",
+        "description" : "Op de server",
+        "date" : "2024-02-05 00:00",
+        "done" : true
+    },
+    {
+        "id": 4,
+        "titel" : "https installeren",
+        "description" : "Op de server",
+        "date" : "2024-02-05 00:00",
+        "done" : false
+    },
+    {
+        "id": 5,
+        "titel" : "trein halen",
+        "description" : "Station Ede-Wageningen",
+        "date" : "2024-02-06 8:05",
+        "done" : true
+    },
+    {
+        "id": 6,
+        "titel" : "lars pesten",
+        "description" : "Overal",
+        "date" : "2024-02-05 12:15",
+        "done" : true
+    }
+}

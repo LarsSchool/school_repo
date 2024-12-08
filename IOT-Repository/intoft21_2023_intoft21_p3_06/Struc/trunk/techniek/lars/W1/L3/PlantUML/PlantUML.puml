@@ -1,0 +1,47 @@
+@startuml PlantUML-opdracht
+
+skin rose
+
+
+[*] --> Spoorboom_open
+Spoorboom_open : entry()
+Spoorboom_open : do()
+Spoorboom_open : exit()
+Spoorboom_open --> Spoorboom_sluiten : treinOost==true || treinWest == true
+Spoorboom_open --> Oversteken_zuid : wegGebruikersZuid == true
+Spoorboom_open --> Oversteken_noord : wegGebruikersNoord == true
+
+Spoorboom_sluiten : entry()
+Spoorboom_sluiten : do()
+Spoorboom_sluiten : exit()
+Spoorboom_sluiten --> Spoorboom_dicht : checkSpoorboomGesloten() == true
+
+Spoorboom_dicht : entry()
+Spoorboom_dicht : do()
+Spoorboom_dicht : exit()
+Spoorboom_dicht -> Spoorboom_openen : treinVoorbij == true
+
+Spoorboom_openen : entry()
+Spoorboom_openen : do()
+Spoorboom_openen : exit()
+Spoorboom_openen -> Aftellen : checkSpoorboomOpen() == true
+
+Aftellen : entry()
+Aftellen : do()
+Aftellen : exit()
+Aftellen --> Spoorboom_open : aftellen == false
+
+Oversteken_zuid : entry()
+Oversteken_zuid : do()
+Oversteken_zuid : exit()
+Oversteken_zuid -> Spoorboom_open : Na 20 sec
+Oversteken_zuid --> Spoorboom_sluiten : treinOost==true || treinWest == true
+
+
+Oversteken_noord : entry()
+Oversteken_noord : do()
+Oversteken_noord : exit()
+Oversteken_noord -> Spoorboom_open : Na 20 sec
+Oversteken_noord --> Spoorboom_sluiten : treinOost==true || treinWest == true
+
+@enduml

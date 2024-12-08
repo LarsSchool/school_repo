@@ -1,0 +1,84 @@
+
+-----Without Wall in the cmake-----
+
+lars@lars-omen:~/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/linux$ make
+[ 16%] Building CXX object CMakeFiles/Kinemetica.dir/src/Main.cpp.o
+[ 33%] Building CXX object CMakeFiles/Kinemetica.dir/src/RobotArm.cpp.o
+[ 50%] Building CXX object CMakeFiles/Kinemetica.dir/src/RobotController/serialHandler.cpp.o
+[ 66%] Building CXX object CMakeFiles/Kinemetica.dir/src/RobotController/RobotLL.cpp.o
+[ 83%] Building CXX object CMakeFiles/Kinemetica.dir/src/RobotController/RobotHL.cpp.o
+[100%] Linking CXX executable Kinemetica
+[100%] Built target Kinemetica
+
+
+
+
+
+-----With Wall in the cmake-----
+
+lars@lars-omen:~/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/linux$ make
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/linux
+[ 16%] Building CXX object CMakeFiles/Kinemetica.dir/src/Main.cpp.o
+[ 33%] Building CXX object CMakeFiles/Kinemetica.dir/src/RobotArm.cpp.o
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp: In member function ‘void RobotArm::calculateInverseKinematics(std::pair<double, double>, double, double)’:
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:80:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<JointArm>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   80 |         for (int i = 0; i < joints.size(); ++i) {
+      |                         ~~^~~~~~~~~~~~~~~
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp: In member function ‘void RobotArm::kinematica(double, double, double, double)’:
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:142:60: warning: conversion from ‘double’ to ‘int16_t’ {aka ‘short int’} may change value [-Wfloat-conversion]
+  142 |         robotController.singleServoCommandDegrees(3500, 0, angle1);
+      |                                                            ^~~~~~
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:150:71: warning: conversion from ‘double’ to ‘int16_t’ {aka ‘short int’} may change value [-Wfloat-conversion]
+  150 | botController.singleServoCommandDegrees(5000, 1 , joints[0].currentAngle);
+
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:151:71: warning: conversion from ‘double’ to ‘int16_t’ {aka ‘short int’} may change value [-Wfloat-conversion]
+  151 | botController.singleServoCommandDegrees(5000, 2 , joints[1].currentAngle);
+
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:152:71: warning: conversion from ‘double’ to ‘int16_t’ {aka ‘short int’} may change value [-Wfloat-conversion]
+  152 | botController.singleServoCommandDegrees(2000, 3 , joints[2].currentAngle);
+
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:169:60: warning: conversion from ‘double’ to ‘int16_t’ {aka ‘short int’} may change value [-Wfloat-conversion]
+  169 |         robotController.singleServoCommandDegrees(3500, 0, angle2);
+      |                                                            ^~~~~~
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:178:71: warning: conversion from ‘double’ to ‘int16_t’ {aka ‘short int’} may change value [-Wfloat-conversion]
+  178 | botController.singleServoCommandDegrees(5000, 1 , joints[0].currentAngle);
+
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:179:71: warning: conversion from ‘double’ to ‘int16_t’ {aka ‘short int’} may change value [-Wfloat-conversion]
+  179 | botController.singleServoCommandDegrees(5000, 2 , joints[1].currentAngle);
+
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:180:71: warning: conversion from ‘double’ to ‘int16_t’ {aka ‘short int’} may change value [-Wfloat-conversion]
+  180 | botController.singleServoCommandDegrees(1500, 3 , joints[2].currentAngle);
+
+In file included from /home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/Matrix.hpp:269,
+                 from /home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.h:8,
+                 from /home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:8:
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/Matrix.inc: In instantiation of ‘bool equals(const Matrix<T, M, N>&, const Matrix<T, M, N>&, T, long unsigned int) [with T = double; long unsigned int M = 2; long unsigned int N = 1]’:
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/Matrix.inc:472:27:   required from ‘bool equals(const Matrix<T, M, 1>&, const Matrix<T, M, 1>&, T, long unsigned int) [with T = double; long unsigned int M = 2]’
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotArm.cpp:63:19:   required from here
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/Matrix.inc:442:33: warning: conversion from ‘long unsigned int’ to ‘double’ may change value [-Wconversion]
+  442 |     T tolerantie = aPrecision * aFactor;
+      |                                 ^~~~~~~
+[ 50%] Building CXX object CMakeFiles/Kinemetica.dir/src/RobotController/serialHandler.cpp.o
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotController/serialHandler.cpp: In constructor ‘serialHandler::serialHandler(long unsigned int, const std::string&)’:
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotController/serialHandler.cpp:6:64: warning: conversion from ‘long unsigned int’ to ‘unsigned int’ may change value [-Wconversion]
+    6 |  serial.set_option(boost::asio::serial_port_base::baud_rate(baudRate));
+      |                                                             ^~~~~~~~
+
+[ 66%] Building CXX object CMakeFiles/Kinemetica.dir/src/RobotController/RobotLL.cpp.o
+[ 83%] Building CXX object CMakeFiles/Kinemetica.dir/src/RobotController/RobotHL.cpp.o
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotController/RobotHL.cpp: In member function ‘uint16_t RobotArm_HighLevel::convertDegreesToPulseWidth(int16_t, int8_t)’:
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotController/RobotHL.cpp:40:13: warning: conversion from ‘int’ to ‘uint16_t’ {aka ‘short unsigned int’} may change value [-Wconversion]
+   39 |     uint16_t pulseWidth = outputMin
+      |                           ~~~~~~~~~
+   40 |             + ((degrees - inputMin) * (outputMax - outputMin))
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   41 |                     / (inputMax - inputMin);
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~
+/home/lars/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/src/RobotController/RobotHL.cpp:43:23: warning: conversion from ‘int’ to ‘uint16_t’ {aka ‘short unsigned int’} may change value [-Wconversion]
+   43 |     return pulseWidth + offset;
+      |            ~~~~~~~~~~~^~~~~~~~
+[100%] Linking CXX executable Kinemetica
+[100%] Built target Kinemetica
+lars@lars-omen:~/School-shit/WoR-Robots/Peer_Review_Kinematica/lars/Kinematica/linux$ 

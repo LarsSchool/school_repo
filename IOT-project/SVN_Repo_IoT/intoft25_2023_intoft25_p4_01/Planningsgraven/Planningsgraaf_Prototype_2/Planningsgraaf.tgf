@@ -1,0 +1,24 @@
+1 Softserial onderzoeken
+2 Softserial zuurstofmeter implementeren
+3 Softserial bloedmeting implementeren
+4 Onderzoeken bloedmeting
+5 Onderzoeken PID-controller
+6 PID-controller implementeren binnen zuurstofmeter
+7 Potmeter frequentie aanpassen
+8 Demonstratie voorbereiden
+9 Wipwap testen
+10 Verder onderzoek en testen methodes Softserial
+11 Samenvoegen van CAN, DAC en SoftSerial implementaties
+#
+1 10
+10 2
+10 3
+4 3
+5 6
+3 11
+2 11
+6 9
+2 9
+7 11
+9 11
+11 8

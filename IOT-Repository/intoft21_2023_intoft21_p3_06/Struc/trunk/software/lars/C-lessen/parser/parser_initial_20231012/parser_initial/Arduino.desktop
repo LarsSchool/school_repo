@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Arduino
+Comment=Arduino_IDE
+Icon=/home/arduino.svg
+Exec=/home/arduino-ide_2.3.2_Linux_64bit
+Terminal=false
+Categories=Arduino;School;IDE;

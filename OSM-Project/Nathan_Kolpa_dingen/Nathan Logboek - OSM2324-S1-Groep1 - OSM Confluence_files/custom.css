@@ -1,0 +1,122 @@
+
+                @keyframes avatar{   
+    100% {   
+       /* transform: rotate(360deg);   */
+transform: scale(1.2,1.2);
+    }   
+}  
+  
+@-webkit-keyframes avatar{   
+    100% {   
+        /* -webkit-transform: rotate(360deg);  */ 
+-webkit-transform: scale(1.2,1.2);
+
+    }   
+}  
+  
+@-moz-keyframes avatar{   
+    100% {   
+   /*     -moz-transform: rotate(360deg);   */
+ -moz-transform: scale(1.2,1.2);
+
+    }   
+}  
+
+
+
+
+.space-logo{  
+animation: avatar 2s linear infinite;  
+clip-path: circle();
+animation-direction: alternate;
+}  
+  
+.acs-side-bar-space-info{
+height: auto;
+}
+  
+                @keyframes spin {     
+    100% {     
+        transform: rotate(360deg);     
+    }     
+}    
+    
+@-webkit-keyframes spin {     
+    100% {     
+        -webkit-transform: rotate(360deg);     
+    }     
+}    
+    
+@-moz-keyframes spin {     
+    100% {     
+        -moz-transform: rotate(360deg);     
+    }     
+}    
+  
+@keyframes bell {  
+0% {  
+transform: rotate(0deg);  
+}  
+  
+50% {  
+transform: rotate(-45deg);  
+}  
+  
+100% {  
+transform: rotate(0deg);  
+}  
+}  
+  
+#notifications-anchor {  
+animation: bell 3s linear infinite;  
+}  
+  
+.aui-iconfont-unstar{
+animation: spin 3s linear infinite;  
+
+}
+.aui-iconfont-configure{  
+animation: spin 3s linear infinite;  
+}  
+
+@keyframes shootOut {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    /* Adjust the translateY value to ensure the page moves completely out of view */
+    transform: translateY(-1000vh); 
+  }
+}
+
+
+
+
+
+ @keyframes hue-rotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+ @keyframes hue-reverse-rotate {
+    0% {
+        filter: hue-rotate(360deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
+.aui-header {  
+    animation: hue-rotate 3s linear infinite;  
+}
+
+#header .aui-buttons {
+    animation: hue-reverse-rotate 3s linear infinite;
+}
+
+

@@ -1,0 +1,6 @@
+1. Bij de println is er nog een extra character, namelijk een enter, die er achteraan komt.
+2. ?? hij is 10,4
+3. 
+4. 11 microseconden, 
+5. Dan registreert hij niet alles meer en zullen de metingen niet meer kloppen.
+6. Dus zoveel HZ is de maximale snelheid in hz, dit is in micro secondes 7,375.

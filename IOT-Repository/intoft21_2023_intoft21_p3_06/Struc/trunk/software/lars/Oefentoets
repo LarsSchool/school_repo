@@ -1,0 +1,22 @@
+{
+boekenlijst:{
+boek:
+}
+
+}
+
+
+enum state {PLAY, PAUSE, STOP};
+typedef state machinestate;
+machinestate[5] machines {PLAY};
+
+
+void free2d(int** matrix, int rows, int columns){
+	if(matrix == 0){
+		return;
+	}
+	for(int i = 0; i < rows){
+		free(matrix[i]);
+	}
+	free(matrix);
+}

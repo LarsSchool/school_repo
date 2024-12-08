@@ -1,0 +1,1199 @@
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:172:61: style: inconclusive: Function 'operator/=' argument 1 names different: declaration 'scalar' definition 'aScalar'. [funcArgNamesDifferent]
+Matrix< T, M, N >& Matrix< T, M, N >::operator/=( const T2& aScalar)
+                                                            ^
+src/Matrix.hpp:145:44: note: Function 'operator/=' argument 1 names different: declaration 'scalar' definition 'aScalar'.
+  Matrix< T, M, N >& operator/=( const T2& scalar);
+                                           ^
+src/Matrix.inc:172:61: note: Function 'operator/=' argument 1 names different: declaration 'scalar' definition 'aScalar'.
+Matrix< T, M, N >& Matrix< T, M, N >::operator/=( const T2& aScalar)
+                                                            ^
+src/Matrix.inc:190:59: style: inconclusive: Function 'operator/' argument 1 names different: declaration 'scalar' definition 'aScalar'. [funcArgNamesDifferent]
+Matrix< T, M, N > Matrix< T, M, N >::operator/( const T2& aScalar) const
+                                                          ^
+src/Matrix.hpp:150:42: note: Function 'operator/' argument 1 names different: declaration 'scalar' definition 'aScalar'.
+  Matrix< T, M, N > operator/( const T2& scalar) const;
+                                         ^
+src/Matrix.inc:190:59: note: Function 'operator/' argument 1 names different: declaration 'scalar' definition 'aScalar'.
+Matrix< T, M, N > Matrix< T, M, N >::operator/( const T2& aScalar) const
+                                                          ^
+src/RobotController/RobotLL.h:82:40: performance: Function parameter 'commandString' should be passed by const reference. [passedByValue]
+    void sendCommand(const std::string commandString);
+                                       ^
+src/Matrix.inc:391:5: information: TemplateSimplifier: max template recursion (100) reached for template 'Matrix<>'. You might want to limit Cppcheck recursion. [templateRecursion]
+    Matrix< T, M, N > identityMatrix = this->identity();
+    ^
+src/RobotArm.h:28:30: style: inconclusive: Technically the member function 'RobotArm::calculateForwardKinematics' can be const. [functionConst]
+   std::pair<double, double> calculateForwardKinematics();
+                             ^
+src/RobotArm.cpp:24:37: note: Technically the member function 'RobotArm::calculateForwardKinematics' can be const.
+std::pair<double, double> RobotArm::calculateForwardKinematics()
+                                    ^
+src/RobotArm.h:28:30: note: Technically the member function 'RobotArm::calculateForwardKinematics' can be const.
+   std::pair<double, double> calculateForwardKinematics();
+                             ^
+src/RobotArm.h:29:30: performance: inconclusive: Technically the member function 'RobotArm::calculateForwardKinematics' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+   std::pair<double, double> calculateForwardKinematics(double angle, double length);
+                             ^
+src/RobotArm.cpp:34:37: note: Technically the member function 'RobotArm::calculateForwardKinematics' can be static (but you may consider moving to unnamed namespace).
+std::pair<double, double> RobotArm::calculateForwardKinematics(double angle, double length)
+                                    ^
+src/RobotArm.h:29:30: note: Technically the member function 'RobotArm::calculateForwardKinematics' can be static (but you may consider moving to unnamed namespace).
+   std::pair<double, double> calculateForwardKinematics(double angle, double length);
+                             ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 3 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 3 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 3 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 3 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 3 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 3 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 3 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 6 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 3 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 3 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 3 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 3 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 6 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 6 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 6 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 12 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 3 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 3 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 3 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 3 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 6 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 6 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 6 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 6 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 6 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 6 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 6 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 12 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 12 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 12 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 24 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 24 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 24 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 6 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 3 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 3 , 16 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 3 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 3 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 12 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 16 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 16 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 6 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 6 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 6 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 12 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 12 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 12 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 12 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 12 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 12 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 24 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 24 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 24 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 48 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 48 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 48 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 12 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 6 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 16 , 3 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 16 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 16 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 3 , 32 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 3 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 3 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 24 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 24 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 24 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 16 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 16 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 16 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 32 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 16 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 16 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 16 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 32 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 6 , 16 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 6 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 6 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 12 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 12 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 12 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 24 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 24 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 24 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 24 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 24 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 24 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 48 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 48 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 48 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 96 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 96 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 96 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 24 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 24 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 24 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 12 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 16 , 6 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 16 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 16 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 32 , 3 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 32 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 32 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 3 , 64 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 3 , 64 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 3 , 64 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 48 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 48 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 48 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 32 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 32 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 32 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 64 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 64 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 64 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 16 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 16 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 16 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 16 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 32 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 32 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 32 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 64 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 64 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 64 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 6 , 32 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 6 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 6 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 12 , 16 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 12 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 12 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 24 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 24 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 24 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 48 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 48 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 48 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 48 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 48 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 48 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 96 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 96 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 96 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 192 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 192 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 192 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 48 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 48 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 48 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 24 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 24 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 24 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 16 , 12 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 16 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 16 , 12 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 32 , 6 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 32 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 32 , 6 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 64 , 3 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 64 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 64 , 3 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 3 , 128 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 3 , 128 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 3 , 128 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 96 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 96 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 96 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 64 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 64 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 64 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 1 , 128 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 1 , 128 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 1 , 128 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 32 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 16 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 16 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 16 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 16 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 32 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 32 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 32 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 64 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 64 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 64 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 128 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 128 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 128 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 6 , 64 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 6 , 64 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 6 , 64 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 12 , 32 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 12 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 12 , 32 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 24 , 16 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 24 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 24 , 16 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 48 , 8 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 48 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 48 , 8 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 96 , 1 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 96 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 96 , 1 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 96 , 4 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 96 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 96 , 4 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 192 , 2 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 192 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 192 , 2 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 2 , 384 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 2 , 384 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 2 , 384 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 4 , 96 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 4 , 96 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 4 , 96 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.hpp:189:21: performance: inconclusive: Technically the member function 'Matrix < double , 8 , 48 >::identity' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:282:38: note: Technically the member function 'Matrix < double , 8 , 48 >::identity' can be static (but you may consider moving to unnamed namespace).
+Matrix< T, M, N > Matrix< T, M, N >::identity() const
+                                     ^
+src/Matrix.hpp:189:21: note: Technically the member function 'Matrix < double , 8 , 48 >::identity' can be static (but you may consider moving to unnamed namespace).
+  Matrix< T, M, N > identity() const;
+                    ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 2' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 3' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 3' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: If 'kolommen < 2', the comparison 'kolommen < 2' is always true. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 6' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 4' is redundant since 'kolommen < 3' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: If 'kolommen < 1', the comparison 'kolommen < 1' is always true. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 4' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 4' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 12' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 8' is redundant since 'kolommen < 3' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 6' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 8' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 8' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 6' is redundant since 'kolommen < 4' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 24' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 16' is redundant since 'kolommen < 3' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 12' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 16' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: If 'kolommen < 4', the comparison 'kolommen < 4' is always true. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 16' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 8' is redundant since 'kolommen < 6' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 12' is redundant since 'kolommen < 4' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 48' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 32' is redundant since 'kolommen < 3' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 24' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 32' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 8' is redundant since 'kolommen < 4' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 32' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 16' is redundant since 'kolommen < 6' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 12' is redundant since 'kolommen < 8' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 24' is redundant since 'kolommen < 4' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 96' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 64' is redundant since 'kolommen < 3' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 48' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 64' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 16' is redundant since 'kolommen < 4' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: If 'kolommen < 8', the comparison 'kolommen < 8' is always true. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 64' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 32' is redundant since 'kolommen < 6' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 16' is redundant since 'kolommen < 12' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 24' is redundant since 'kolommen < 8' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 48' is redundant since 'kolommen < 4' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 192' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 128' is redundant since 'kolommen < 3' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 96' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 128' is redundant since 'kolommen < 1' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 32' is redundant since 'kolommen < 4' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 16' is redundant since 'kolommen < 8' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 128' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 64' is redundant since 'kolommen < 6' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 32' is redundant since 'kolommen < 12' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 24' is redundant since 'kolommen < 16' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 48' is redundant since 'kolommen < 8' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 96' is redundant since 'kolommen < 4' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/Matrix.inc:305:49: style: Redundant condition: The condition 'kolommen < 384' is redundant since 'kolommen < 2' is sufficient. [redundantCondition]
+    for (std::size_t kolommen = 0; kolommen < N && kolommen < M; ++kolommen) { // We gaan elke kolom langs om de gauss toe te passen.
+                                                ^
+src/RobotController/RobotHL.h:36:14: style: inconclusive: Technically the member function 'RobotArm_HighLevel::convertDegreesToPulseWidth' can be const. [functionConst]
+    uint16_t convertDegreesToPulseWidth(int16_t degrees, int8_t channel);
+             ^
+src/RobotController/RobotHL.cpp:16:30: note: Technically the member function 'RobotArm_HighLevel::convertDegreesToPulseWidth' can be const.
+uint16_t RobotArm_HighLevel::convertDegreesToPulseWidth(int16_t degrees, int8_t channel) {
+                             ^
+src/RobotController/RobotHL.h:36:14: note: Technically the member function 'RobotArm_HighLevel::convertDegreesToPulseWidth' can be const.
+    uint16_t convertDegreesToPulseWidth(int16_t degrees, int8_t channel);
+             ^
+src/RobotController/RobotHL.h:60:10: style: inconclusive: Technically the member function 'RobotArm_HighLevel::checkRobotJointAngle' can be const. [functionConst]
+    bool checkRobotJointAngle(int16_t degrees, int8_t channel);
+         ^
+src/RobotController/RobotHL.cpp:91:26: note: Technically the member function 'RobotArm_HighLevel::checkRobotJointAngle' can be const.
+bool RobotArm_HighLevel::checkRobotJointAngle(int16_t degrees, int8_t channel)
+                         ^
+src/RobotController/RobotHL.h:60:10: note: Technically the member function 'RobotArm_HighLevel::checkRobotJointAngle' can be const.
+    bool checkRobotJointAngle(int16_t degrees, int8_t channel);
+         ^
+src/RobotController/RobotLL.h:97:17: performance: inconclusive: Technically the member function 'RobotArm_LowLevel::generateCommandString' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+    std::string generateCommandString(int8_t pin, uint16_t pulseWidth, uint16_t speed, uint16_t time, bool endOfCommand = true);
+                ^
+src/RobotController/RobotLL.cpp:49:32: note: Technically the member function 'RobotArm_LowLevel::generateCommandString' can be static (but you may consider moving to unnamed namespace).
+std::string RobotArm_LowLevel::generateCommandString(int8_t pin, uint16_t pulseWidth, uint16_t speed, uint16_t time, bool endOfCommand)
+                               ^
+src/RobotController/RobotLL.h:97:17: note: Technically the member function 'RobotArm_LowLevel::generateCommandString' can be static (but you may consider moving to unnamed namespace).
+    std::string generateCommandString(int8_t pin, uint16_t pulseWidth, uint16_t speed, uint16_t time, bool endOfCommand = true);
+                ^
+src/RobotController/RobotLL.cpp:6:69: performance: Function parameter 'usbPort' should be passed by const reference. [passedByValue]
+RobotArm_LowLevel::RobotArm_LowLevel(uint32_t baudRate, std::string usbPort)
+                                                                    ^
+src/RobotController/RobotLL.cpp:44:55: performance: Function parameter 'commandString' should be passed by const reference. [passedByValue]
+void RobotArm_LowLevel::sendCommand(const std::string commandString)
+                                                      ^
+src/Matrix.hpp:67:0: style: The function 'getRows' is never used. [unusedFunction]
+  inline static std::size_t getRows()
+^
+src/Matrix.hpp:74:0: style: The function 'getColumns' is never used. [unusedFunction]
+  inline static std::size_t getColumns()
+^
+src/Matrix.inc:363:0: style: The function 'solve' is never used. [unusedFunction]
+Matrix< T, M, 1 > Matrix< T, M, N >::solve() const
+^
+src/RobotArm.cpp:103:0: style: The function 'getJointAngle' is never used. [unusedFunction]
+double RobotArm::getJointAngle(unsigned short joint) const
+^
+src/RobotArm.cpp:108:0: style: The function 'setJointAngle' is never used. [unusedFunction]
+double RobotArm::setJointAngle(unsigned short joint, double angle)
+^
+src/RobotArm.cpp:114:0: style: The function 'getXPosition' is never used. [unusedFunction]
+double RobotArm::getXPosition() const
+^
+src/RobotArm.cpp:119:0: style: The function 'getYPosition' is never used. [unusedFunction]
+double RobotArm::getYPosition() const
+^
+src/RobotArm.cpp:125:0: style: The function 'getCurrentPosition' is never used. [unusedFunction]
+std::pair<double, double> RobotArm::getCurrentPosition()
+^
+src/RobotController/RobotHL.cpp:46:0: style: The function 'waitUntilDone' is never used. [unusedFunction]
+bool RobotArm_HighLevel::waitUntilDone()
+^
+src/RobotController/RobotHL.cpp:119:0: style: The function 'moveToPark' is never used. [unusedFunction]
+void RobotArm_HighLevel::moveToPark()
+^
+src/RobotController/RobotHL.cpp:138:0: style: The function 'moveToStraightUp' is never used. [unusedFunction]
+void RobotArm_HighLevel::moveToStraightUp()
+^
+src/RobotController/serialHandler.cpp:39:0: style: The function 'readFromSerialUntil' is never used. [unusedFunction]
+std::string serialHandler::readFromSerialUntil(char delimiter)
+^
+nofile:0:0: information: Active checkers: 179/835 (use --checkers-report=<filename> to see details) [checkersReport]
+

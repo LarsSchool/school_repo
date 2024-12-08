@@ -1,32 +1,53 @@
-# Prerequisites
-*.d
+# This gitignore was partially created by ChatGPT, since I dont know all extensions that are generated.
 
-# Compiled Object files
-*.slo
-*.lo
+# General temporary and system files
+*.log
+*.tmp
+*.swp
+*.lock
+
+# Build directories
+build/
+Build/
+bin/
+install/
+
+# IDE specific files and folders
+.vscode/
+*.suo
+*.user
+
+# Git specific files
+.gitignore~
+*~
+
+# SVN specific files
+.svn/
+
+# Python related
+__pycache__/
+*.py[cod]
+
+# C++ build artifacts
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+*.exe
 *.lib
 
-# Executables
-*.exe
-*.out
-*.app
+# ROS related
+install/
+build/
+log/
+
+# Custom directories (add/remove as needed)
+logs/
+tmp/
+trash/
+flask/
+todo/
+lib/
+libdeps/
+localenvironment/
+*.zip
+*.deb

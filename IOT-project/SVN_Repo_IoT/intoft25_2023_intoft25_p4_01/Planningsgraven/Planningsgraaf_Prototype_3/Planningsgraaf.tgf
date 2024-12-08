@@ -1,0 +1,34 @@
+1 #13401 * 1 patiënt softserial versturen over de CAN
+2 #13407 SoftSerial versturen over CAN met ID's
+3 #13409 SoftSerial data printen op de ESP32
+4 #13402 * 2 patiënten aan mockdata sturen over SoftSerial en DAC.
+5 #13406 Softseriele data voor 2 patiënten
+6 #13408 ECG versturen via DAC voor 2 patiënten
+7 #13410 Opstelling updaten
+8 #13403 * Plotter verbeteren
+9 #13404 * PID verdelen over meerdere Arduino's en CAN communicatie hiertussen toevoegen
+10 #13413 SensorData versturen via CAN
+11 #13415 Servowaarde versturen via CAN
+12 #13416 PID waardes versturen over CAN
+13 #13417 PID berekening op een aparte Arduino uitvoeren doorsturen.
+14 #13405 * Op een centraal punt het dataverkeer monitoren, zoals bijvoorbeeld de bezetting en het aantal berichten per machine
+15 #13411 Onderzoek maken over de beste manier van loggen van data/dataverkeer
+16 #13412 Implementeren methode vanuit onderzoek
+17 Demonstratie voorbereiden
+#
+2 1
+3 1
+5 4
+6 4
+7 4
+10 11
+11 12
+12 13
+13 9
+15 16
+16 14
+1 17
+4 17
+8 17
+9 17
+14 17
