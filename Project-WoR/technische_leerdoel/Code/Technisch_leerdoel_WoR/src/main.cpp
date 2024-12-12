@@ -5,9 +5,12 @@
 #include <Arduino.h>
 #include <stdint.h>
 
+#define STRINGIFY(x) #x
+#define TOSTRING(x) STRINGIFY(x)
 #define LIGHT_SENSOR_PIN 15 // For the ESP32 this is ADC pin 13
 #define TEMP_SENSOR_PIN 2   // For the ESP32 this is ADC pin 12
 #define LIGHT_MODES_AMOUNT 6
+#define TASK_DELAY 1000
 
 enum lightModes
 {
@@ -24,6 +27,7 @@ TaskHandle_t tempsensorCheckHandle;
 TaskHandle_t emergencyStopHandle;
 
 bool emergencyStopActive = false;
+const bool debugMode = false;
 
 float tempC; // temperature in Celsius
 
@@ -48,26 +52,26 @@ void printLightSensorValue(unsigned short mappedValue)
   switch (mappedValue)
   {
   case veryDark:
-    Serial.print("   => Very very dark, scary!");
+    Serial.print("   => (0) Very very dark, scary!");
     break;
   case dark:
-    Serial.print("   => Very dark");
+    Serial.print("   => (1) Very dark");
 
     break;
   case dim:
-    Serial.print("   => Dark");
+    Serial.print("   => (2) Dark");
 
     break;
   case light:
-    Serial.print("   => Dim");
+    Serial.print("   => (3) Dim");
 
     break;
   case bright:
-    Serial.print("   => Light");
+    Serial.print("   => (4) Light");
 
     break;
   case veryBright:
-    Serial.print("   => Bright, like daylight");
+    Serial.print("   => (5) Bright, like daylight");
     break;
   }
 }
@@ -85,13 +89,20 @@ void checkLightSensor(void *parameter)
       uint16_t analogValue = analogRead(LIGHT_SENSOR_PIN);
       uint8_t analogValueMapped = map(analogValue, 0, 4095, 0, LIGHT_MODES_AMOUNT - 1);
 
-      Serial.print("[Light Sensor]: Analog Value = ");
-      Serial.print(analogValue); // The raw analog reading
-      Serial.print("  -  Mapped Value = ");
-      Serial.print(analogValueMapped); // The mapped analog value.
+      if (debugMode)
+      {
+        Serial.print("[Light Sensor]: Analog Value = ");
+        Serial.print(analogValue); // The raw analog reading
+        Serial.print("  -  Light Level (0-" TOSTRING(LIGHT_MODES_AMOUNT) ")");
+        Serial.print(analogValueMapped); // The mapped analog value.
+      }
+      else
+      {
+        Serial.print("Light Level (0-" TOSTRING(LIGHT_MODES_AMOUNT) ")");
+        Serial.print(analogValueMapped); // The mapped analog value.
+      }
 
       printLightSensorValue(analogValueMapped);
-
       Serial.println();
 
       if (analogValue >= 4090 || analogValue <= 150)
@@ -101,7 +112,7 @@ void checkLightSensor(void *parameter)
     }
     else
     {
-      Serial.println("EMERGENCY STOP ACTIVE, NOT READING SENSOR");
+      Serial.println("EMERGENCY STOP ACTIVE, NOT READING LIGHTSENSOR");
     }
 
     vTaskDelay(500 / portTICK_PERIOD_MS);
@@ -121,12 +132,22 @@ void checkTempSensor(void *parameter)
       uint16_t analogValue = analogRead(TEMP_SENSOR_PIN);
 
       double tempC = map(analogValue, 0, 4095, -10, 125) - 4; // -4 has to be there so it can also go below 0.
-      
-      Serial.print("[Temperature Sensor]: Analog Value = ");
-      Serial.print(analogValue);
-      Serial.print("  -  Temperature: ");
-      Serial.print(tempC);
-      Serial.println("°C");
+
+      if (debugMode)
+      {
+        Serial.print("[Temperature Sensor]: Analog Value = ");
+        Serial.print(analogValue);
+        Serial.print("  -  Temperature: ");
+        Serial.print(tempC);
+        Serial.print("°C");
+      }
+      else
+      {
+        Serial.print("Temperature: ");
+        Serial.print(tempC);
+        Serial.print("°C");
+      }
+      Serial.println();
 
       if (tempC >= 30.00 || tempC <= 10.00)
       {
@@ -135,7 +156,7 @@ void checkTempSensor(void *parameter)
     }
     else
     {
-      Serial.println("EMERGENCY STOP ACTIVE, NOT READING SENSOR");
+      Serial.println("EMERGENCY STOP ACTIVE, NOT READING TEMPSENSOR");
     }
 
     vTaskDelay(500 / portTICK_PERIOD_MS);
