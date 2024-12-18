@@ -1,0 +1,24 @@
+
+<?xml version='1.0' ?>
+<sdf version='1.6'>
+  <model name='toolbox'>
+    <static>false</static>
+    <link name='link'>
+      <collision name='collision'>
+        <geometry>
+          <mesh>
+            <uri>model://world/models/static_objects/toolbox/meshes/toolbox.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://world/models/static_objects/toolbox/meshes/toolbox.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
+    

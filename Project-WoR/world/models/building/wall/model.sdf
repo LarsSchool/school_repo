@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="wall">
+    <static>true</static>
+    <link name="wall_body">
+      <collision name="collision_wall">
+        <geometry>
+          <box>
+            <size>10 0.1 1</size> <!-- Length, Thickness, Height -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_wall">
+        <geometry>
+          <box>
+            <size>10 0.1 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
