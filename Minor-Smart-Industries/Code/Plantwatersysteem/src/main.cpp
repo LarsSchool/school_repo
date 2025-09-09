@@ -1,6 +1,25 @@
 #include <Arduino.h>
+#include <vector>
 
 // See the actual loop and setup at the bottom of the page.
+
+// Software timer(s) code
+// ------------------------------------------------------------------------------------------------------------
+enum Components { LDRSensor, Moist, WaterPump, DHTSensor, KaKu };
+
+uint8_t numberOfComponents = 5;
+uint64_t currentTimeMillis = millis();
+
+std::vector<uint64_t> timers(numberOfComponents, 0);
+
+void softwareTimerSetup() {
+  timers[LDRSensor] = currentTimeMillis;
+  timers[Moist] = currentTimeMillis;
+  timers[WaterPump] = currentTimeMillis;
+  timers[DHTSensor] = currentTimeMillis;
+  timers[KaKu] = currentTimeMillis;
+}
+
 
 // KaKu switch code
 // ------------------------------------------------------------------------------------------------------------
@@ -32,10 +51,13 @@ void setupKaKu() {
 }
 
 void loopKaKu() {
-  switchKaku(rfPin, TRANSMITTERID1, 1, 1, true, 3);
-  delay(1000);
-  switchKaku(rfPin, TRANSMITTERID1, 1, 1, false, 3);
-  delay(1000);
+  if (currentTimeMillis - timers[KaKu] > 1000) {
+    switchKaku(rfPin, TRANSMITTERID1, 1, 1, true, 3);
+  }
+  if (currentTimeMillis - timers[KaKu] > 2000) {
+    switchKaku(rfPin, TRANSMITTERID1, 1, 1, false, 3);
+    timers[KaKu] = currentTimeMillis;
+  }
 }
 
 // DHT sensor code
@@ -53,38 +75,44 @@ void setupDHT() {
 }
 
 void loopDHT() {
-  delay(1000);
+  if (currentTimeMillis - timers[DHTSensor] > 1000) {
 
-  float h = dht.readHumidity();
-  float t = dht.readTemperature();
+    float h = dht.readHumidity();
+    float t = dht.readTemperature();
 
-  if (isnan(h) || isnan(t)) {
-    Serial.println(F("Failed to read from DHT sensor!"));
-    return;
+    if (isnan(h) || isnan(t)) {
+      Serial.println(F("Failed to read from DHT sensor!"));
+      return;
+    }
+
+    Serial.print(F("Humidity: "));
+    Serial.print(h);
+    Serial.print(F("%  Temperature: "));
+    Serial.print(t);
+    Serial.println(F("°C "));
+
+    timers[DHTSensor] = currentTimeMillis;
   }
-
-  Serial.print(F("Humidity: "));
-  Serial.print(h);
-  Serial.print(F("%  Temperature: "));
-  Serial.print(t);
-  Serial.println(F("°C "));
 }
 
 // Water pump/ relay code
 // ------------------------------------------------------------------------------------------------------------
-int pumpPin = 33;
+uint8_t waterPumpPin = 33;
 
-void setupWaterPump() { pinMode(pumpPin, OUTPUT); }
+void setupWaterPump() { pinMode(waterPumpPin, OUTPUT); }
 
 void loopWaterPump() {
+  if (currentTimeMillis - timers[WaterPump] > 1000) {
+    Serial.println("Pump is now on");
+    digitalWrite(waterPumpPin, HIGH);
+  }
 
-  Serial.println("Pump is now on");
-  digitalWrite(pumpPin, HIGH);
-  delay(1000);
+  if (currentTimeMillis - timers[WaterPump] > 2000) {
+    Serial.println("Pump is now off");
+    digitalWrite(waterPumpPin, LOW);
 
-  Serial.println("Pump is now off");
-  digitalWrite(pumpPin, LOW);
-  delay(1000);
+    timers[WaterPump] = currentTimeMillis;
+  }
 }
 
 // Moist sensor code
@@ -97,10 +125,13 @@ uint32_t moistValue = 0;
 void setupMoist() {}
 
 void loopMoist() {
-  moistValue = analogRead(moistSensPin);
-  Serial.print("Moisture Value = ");
-  Serial.println(moistValue);
-  delay(1000);
+  if (currentTimeMillis - timers[Moist] > 1000) {
+    moistValue = analogRead(moistSensPin);
+    Serial.print("Moisture Value = ");
+    Serial.println(moistValue);
+
+    timers[Moist] = currentTimeMillis;
+  }
 }
 
 // LDR code
@@ -119,22 +150,25 @@ void setupLDR() {
 }
 
 void loopLDR() {
-  lightValue = analogRead(ldrPin);
-  Serial.println(lightValue);
-  if (lightInitial - lightValue >= 200) {
-    digitalWrite(ledPin, HIGH);
-  }
+  if (currentTimeMillis - timers[LDRSensor] > 100) {
+    lightValue = analogRead(ldrPin);
+    Serial.println(lightValue);
+    if (lightInitial - lightValue >= 200) {
+      digitalWrite(ledPin, HIGH);
+    }
 
-  else {
-    digitalWrite(ledPin, LOW);
+    else {
+      digitalWrite(ledPin, LOW);
+    }
+    timers[LDRSensor] = currentTimeMillis;
   }
 }
 
-// Standaard Arduino code
-
+// Standaard Arduino code om het aan te roepen
 void setup() {
   Serial.begin(9600);
   Serial.println("Started the setup sequence.");
+  softwareTimerSetup();
   setupLDR();
   setupMoist();
   setupWaterPump();
@@ -144,9 +178,10 @@ void setup() {
 }
 
 void loop() {
-  // loopLDR();
-  // loopMoist();
-  // loopWaterPump();
-  // loopDHT();
+  loopLDR();
+  loopMoist();
+  loopWaterPump();
+  loopDHT();
   loopKaKu();
+  currentTimeMillis = millis();
 }
