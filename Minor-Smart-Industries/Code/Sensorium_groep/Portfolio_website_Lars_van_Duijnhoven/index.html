@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Home - Lars van Duijnhoven - Portfolio
+    </title>
+
+    <link rel="stylesheet" href="styling.css">
+
+    <div class="navbar" id="navbar"> </div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => { document.getElementById('navbar').innerHTML = html; });
+    </script>
+    <h3 class="nav-title"> Home - Lars van Duijnhoven - Portfolio</h3>
+    <div class="nav-spacer"></div>
+</head>
+
+
+<body>
+
+
+    <H1>Welkom bij de portfolio pagina van Lars van Duijnhoven</H1>
+
+    <p>
+        Deze volledige website is gemaakt in HTML, CSS en JS. Dit houdt dus ook in dat ik geen Bootstrap of andere frameworks heb gebruikt (ook geen Wordpress). Dit is een bewuste keuze geweest, omdat ik het mijzelf iets lastiger wilde maken.
+    </p>
+
+    <p>
+        Insert API's here:
+    </p>
+
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => { document.getElementById('footer').innerHTML = html; });
+    </script>
+</body>
+
+
+</html>
