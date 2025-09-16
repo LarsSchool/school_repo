@@ -2,135 +2,143 @@
 <html>
 
 <head>
-    <title>
-        Leerpunten/logboek - Lars van Duijnhoven - Portfolio
-    </title>
+  <title>
+    Leerpunten/logboek - Lars van Duijnhoven - Portfolio
+  </title>
 
-    <link rel="stylesheet" href="styling.css">
+  <!-- Lightbox code, see https://basiclightbox.electerious.com/ for more information -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
 
-    <div class="navbar" id="navbar"> </div>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(html => { document.getElementById('navbar').innerHTML = html; });
-    </script>
-    <h3 class="nav-title"> Leerpunten - Lars van Duijnhoven - Portfolio</h3>
-    <div class="nav-spacer"></div>
+  <script>
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('img');
+      if (!img) return;
+
+      const src = img.dataset.full || img.src;
+      const alt = img.getAttribute('alt') || '';
+
+      let onEsc;
+
+      const instance = basicLightbox.create(
+        `<img src="${src}" alt="${alt}">`,
+        {
+          onShow: () => {
+            document.body.classList.add('bl-open');
+            onEsc = (ev) => {
+              if (ev.key === 'Escape' || ev.key === 'Esc') {
+                instance.close();
+              }
+            };
+            document.addEventListener('keydown', onEsc);
+          },
+          onClose: () => {
+            document.body.classList.remove('bl-open');
+            document.removeEventListener('keydown', onEsc);
+          }
+        }
+      );
+
+      instance.show();
+    });
+  </script>
+
+  <div class="navbar" id="navbar"> </div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('navbar').innerHTML = html; });
+  </script>
+
+  <link rel="stylesheet" href="styling.css">
+
+  <h3 class="nav-title"> Leerpunten - Lars van Duijnhoven - Portfolio</h3>
+  <div class="nav-spacer"></div>
+
 </head>
 
 
-<!-- Lightbox overlay -->
-<div id="lightbox" class="lightbox-backdrop" aria-hidden="true">
-  <img id="lightbox-img" class="lightbox-img" alt="">
-  <button class="lightbox-close" aria-label="Close">×</button>
-</div>
+<!-- Lightbox overlay: view https://basiclightbox.electerious.com/ for more information -->
 
-<script>
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
-  const lbClose = document.querySelector('.lightbox-close');
-
-  document.addEventListener('click', (e) => {
-    const img = e.target.closest('img');
-    if (!img) return;
-    lbImg.src = img.dataset.full || img.src;
-    lbImg.alt = img.alt || '';
-    lb.setAttribute('aria-hidden', 'false');
-    lb.classList.add('open');
-  });
-
-  lb.addEventListener('click', (e) => {
-    if (e.target === lb || e.target === lbClose) {
-      lb.classList.remove('open');
-      lb.setAttribute('aria-hidden', 'true');
-      lbImg.src = '';
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      lb.classList.remove('open');
-      lb.setAttribute('aria-hidden', 'true');
-      lbImg.src = '';
-    }
-  });
-</script>
 
 
 <body class="leerpunten">
-    <h2>03-09-2025</h2>
-    <p>Deze dag hadden we de kickoff en wat spellen om elkaar beter te leren kennen, dus hier heb ik vooral
-        gesocialiseerd
-        (zover een IT'er dat kan).</p>
-    <br>
+  <h2>03-09-2025</h2>
+  <p>Deze dag hadden we de kickoff en wat spellen om elkaar beter te leren kennen, dus hier heb ik vooral
+    gesocialiseerd
+    (zover een IT'er dat kan).</p>
+  <br>
 
 
-    <h2>04-09-2025</h2>
-    <p>Voor enkelen in de klas was dit hun eerste programmeer en Arduino ervaring, maar ik hoefde niet bij de
-        programmeerles te zijn.
-        Hierna kregen we uitleg over de uiteindelijke opdracht die gemaakt moest worden en toen heb ik dit afgemaakt.
-        Thuis heb ik later nog software timers toegevoegd i.p.v. delay. Ik heb deze dag geleerd hoe je een elektromotor
-        aan kan sturen m.b.v. een relais.
-    </p>
-    <img src="./images/04-09-2025.jpg" alt="Foto van opstelling plantwatersysteem" width="500">
-    <br>
+  <h2>04-09-2025</h2>
+  <p>Voor enkelen in de klas was dit hun eerste programmeer en Arduino ervaring, maar ik hoefde niet bij de
+    programmeerles te zijn.
+    Hierna kregen we uitleg over de uiteindelijke opdracht die gemaakt moest worden en toen heb ik dit afgemaakt.
+    Thuis heb ik later nog software timers toegevoegd i.p.v. delay. Ik heb deze dag geleerd hoe je een elektromotor
+    aan kan sturen m.b.v. een relais.
+  </p>
+  <img src="./images/04-09-2025.jpg" alt="Foto van opstelling plantwatersysteem" width="500">
+  <br>
 
-    <h2>09-09-2025</h2>
-    <p>Deze dag hadden we HTML en CSS uitleg, hier heb ik niet echt naar geluisterd en ben gewoon zelf begonnen met de
-        website. Dit lukte opzich best goed, maar veel dingen moesten wel ververst worden in mijn geheugen.</p>
-    <img src="./images/09-09-2025.png" alt="Foto van opzetje website" width="500">
-    <br>
+  <h2>09-09-2025</h2>
+  <p>Deze dag hadden we HTML en CSS uitleg, hier heb ik niet echt naar geluisterd en ben gewoon zelf begonnen met de
+    website. Dit lukte opzich best goed, maar veel dingen moesten wel ververst worden in mijn geheugen.</p>
+  <img src="./images/09-09-2025.png" alt="Foto van opzetje website" width="500">
+  <br>
 
-    <h2>10-09-2025</h2>
-    <p>We moesten een BMC maken van een Turks verzekeringsbedrijf met specifieke categorie auto's. Na wat overleg en aanpassingen is de foto hieronder waar we mee kwamen.</p>
-    <img src="./images/10-09-2025_1.jpg" alt="Foto van BMC voor oplossing" width="500">
-    <p>Hieronder is dan de foto van onze BMC nadat we de oplossing gehoord hadden gekregen en waarna we hem aan moesten passen. Ik heb hiervan geleerd hoe een BMC werkt, waarom je er een zou maken en hoe je er een in kan vullen.</p>
-    <img src="./images/10-09-2025_1.jpg" alt="Foto van BMC na oplossing directe relaties klanten" width="500">
-    <br>
+  <h2>10-09-2025</h2>
+  <p>We moesten een BMC maken van een Turks verzekeringsbedrijf met specifieke categorie auto's. Na wat overleg en
+    aanpassingen is de foto hieronder waar we mee kwamen.</p>
+  <img src="./images/10-09-2025_1.jpg" alt="Foto van BMC voor oplossing" width="500">
+  <p>Hieronder is dan de foto van onze BMC nadat we de oplossing gehoord hadden gekregen en waarna we hem aan moesten
+    passen. Ik heb hiervan geleerd hoe een BMC werkt, waarom je er een zou maken en hoe je er een in kan vullen.</p>
+  <img src="./images/10-09-2025_1.jpg" alt="Foto van BMC na oplossing directe relaties klanten" width="500">
+  <br>
 
-    <h2>11-09-2025</h2>
-    <p>Ik heb geleerd hoe we data van de ESP32 naar een influx database kunnen sturen om dit overzichtelijk te maken in
-        een soort dashboard. Voorheen had ik wel al gewerkt met de ESP32, maar niet specifiek met data doorsturen en ook
-        niet met dashboards.</p>
-    <img src="./images/11-09-2025_1.jpg"
-        alt="Foto opstelling plantwatersysteem waarin op de laptop te zien is of een motor aan of uit staat."
-        width="500">
-    <img src="./images/11-09-2025.png" alt="Foto dashboard waar je alle informatie binnen ziet komen." width="500">
+  <h2>11-09-2025</h2>
+  <p>Ik heb geleerd hoe we data van de ESP32 naar een influx database kunnen sturen om dit overzichtelijk te maken in
+    een soort dashboard. Voorheen had ik wel al gewerkt met de ESP32, maar niet specifiek met data doorsturen en ook
+    niet met dashboards.</p>
+  <img src="./images/11-09-2025_1.jpg"
+    alt="Foto opstelling plantwatersysteem waarin op de laptop te zien is of een motor aan of uit staat." width="500">
+  <img src="./images/11-09-2025.png" alt="Foto dashboard waar je alle informatie binnen ziet komen." width="500">
 
-    <img src="./images/11-09-2025_2.jpg" alt="Foto " width="500">
-    <img src="./images/11-09-2025_3.jpg" alt="Foto " width="500">
+  <img src="./images/11-09-2025_2.jpg" alt="Foto " width="500">
+  <img src="./images/11-09-2025_3.jpg" alt="Foto " width="500">
 
-    <br>
+  <br>
 
-    <h2>15-09-2025</h2>
-    <p>Tekst over wat ik toen geleerd heb</p>
-    <img src="./images/11-09-2025_3.jpg" alt="Foto " width="500">
-    <img src="./images/11-09-2025_3.jpg" alt="Foto " width="500">
-    <img src="./images/11-09-2025_3.jpg" alt="Foto " width="500">
-    <img src="./images/11-09-2025_3.jpg" alt="Foto " width="500">
-    <img src="./images/11-09-2025_3.jpg" alt="Foto " width="500">
-    <br>
+  <h2>15-09-2025</h2>
+  <p>Hier hebben we veel over AI geleerd, maar helaas heb ik daar geen foto's meer van.
+    Waar ik wel nog foto's van heb is het gebruik van de DOVE methode, begin aan het maken van het PvA en onze 0-meting maken. Ik had nog nooit van de DOVE methode gehoord, maar het klinkt als een vrij simpele, maar wel nuttige methode dus ik zal heb proberen te onthouden.
+  </p>
+  <img src="./images/15-09-2025_1.jpg" alt="Foto " width="500">
+  <img src="./images/15-09-2025_2.jpg" alt="Foto " width="500">
+  <img src="./images/15-09-2025_0_meting.jpg" alt="Foto " width="500">
+  <img src="./images/15-09-2025_ontwikkeldoelen.jpg" alt="Foto " width="500">
+  <img src="./images/15-09-2025_competenties.jpg" alt="Foto " width="500">
+  <br>
 
-    <h2>18-09-2025</h2>
-    <p>Tekst over wat ik toen geleerd heb</p>
-    <br>
+  <h2>18-09-2025</h2>
+  <p>Tekst over wat ik toen geleerd heb</p>
+  <br>
 
-    <h2>24-09-2025</h2>
-    <p>Tekst over wat ik toen geleerd heb</p>
-    <br>
+  <h2>24-09-2025</h2>
+  <p>Tekst over wat ik toen geleerd heb</p>
+  <br>
 
-    <h2>25-09-2025</h2>
-    <p>Tekst over wat ik toen geleerd heb</p>
-    <br>
+  <h2>25-09-2025</h2>
+  <p>Tekst over wat ik toen geleerd heb</p>
+  <br>
 
 
 
-    <div id="footer"></div>
-    <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(html => { document.getElementById('footer').innerHTML = html; });
-    </script>
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer').innerHTML = html; });
+  </script>
 </body>
 
 

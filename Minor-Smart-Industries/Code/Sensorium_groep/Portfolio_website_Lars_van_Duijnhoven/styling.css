@@ -14,9 +14,10 @@ body {
 
 
 .navbar {
+  position: relative;
   font-size: 18px;
   background-color: #333;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .navbar a {
@@ -25,6 +26,19 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+.nav-right-btn {
+  position: absolute;
+  right: 12px;
+  top: 49%;
+  transform: translateY(-50%);
+  overflow: hidden; 
+}
+
+.nav-right-btn:hover {
+  background-color: #3d3d3d;
+  color: #fff;
 }
 
 .navbar a:hover,
@@ -137,42 +151,11 @@ br {
   margin-bottom: 35px;
 }
 
-.lightbox-backdrop {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, .85);
-  z-index: 9999;
-}
-
-.lightbox-backdrop.open {
-  display: flex;
-}
-
-.lightbox-img {
-  max-width: min(90vw, 1400px);
+.basicLightbox__placeholder img {
+  max-width: 90vw;
   max-height: 90vh;
-  border-radius: 10px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, .6);
 }
 
-.lightbox-close {
-  position: fixed;
-  top: 10px;
-  right: 20px;
-  width: 44px;
-  height: 44px;
-  font-size: 28px;
-  padding-bottom: 5px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .15);
-  color: #fff;
-  cursor: pointer;
-}
-
-.lightbox-close:hover {
-  background: rgba(255, 255, 255, .25);
+.bl-open {
+  overflow: hidden;
 }
