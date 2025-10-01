@@ -81,11 +81,6 @@
 
 
     <div id="nasa">
-        <form>
-            <label for="datepicker">Pick a date:
-                <input id="datepicker" type="date" min="" max="">
-            </label>
-        </form>
 
         <section class="title-section">
             <h2 id="title"></h2>
@@ -100,60 +95,84 @@
             <p id="description-nasa"></p>
         </div>
 
+        <form id="nasa-form">
+            <label for="datepicker">Pick a date:
+                <input id="datepicker" type="date" min="" max="">
+            </label>
+        </form>
+
         <script lang="text/javascript">
-            const baseUrl = 'https://api.nasa.gov/planetary/apod?api_key=';
-            const apiKey = "6Scx9GZQX2Nrba4MHyDhDl8YLj1EfovMqb3Tdtdx";
+            const dateInput = document.querySelector("#datepicker");
+            dateInput.addEventListener('change', (e) => {
+                e.preventDefault();
+                nasarequested();
+            })
 
-            const title = document.querySelector("#title");
-            const copyright = document.querySelector("#copyright");
-            const mediaSection = document.querySelector("#media-section");
-            const information = document.querySelector("#description-nasa");
-            const dateElement = document.querySelector("#date");
+            function nasarequested() {
+                const baseUrl = 'https://api.nasa.gov/planetary/apod?api_key=';
+                const apiKey = "6Scx9GZQX2Nrba4MHyDhDl8YLj1EfovMqb3Tdtdx";
 
-            const imageSection = `<a id="hdimg" href="" target="-blank">
+                const title = document.querySelector("#title");
+                const copyright = document.querySelector("#copyright");
+                const mediaSection = document.querySelector("#media-section");
+                const information = document.querySelector("#description-nasa");
+                const dateElement = document.querySelector("#date");
+
+                const imageSection = `<a id="hdimg" href="" target="-blank">
                     <div class="image-div">
                     <img id="image_of_the_day" src="" alt="image-by-nasa">
                     </div>
                     </a>`
 
-            const videoSection = `<div class="video-div"> <iframe id="videoLink" src="" frameborder="0"></iframe></div>`
+                const videoSection = `<div class="video-div"> <iframe id="videoLink" src="" frameborder="0"></iframe></div>`
 
 
-            function fetchData() {
-                try {
-                    fetch(baseUrl + apiKey)
-                        .then(response => response.json())
-                        .then(json => {
-                            displaydata(json)
-                        })
-                } catch (error) {
-                    console.error('Fetch failed:', error);
+                const dateInput = document.querySelector("#datepicker");
+                let newDate = "&date=" + dateInput.value + "&";
+
+                const currentDate = new Date().toISOString().slice(0, 10);
+                dateInput.max = currentDate;
+                dateInput.min = "1995-06-16";
+
+
+
+                function fetchData() {
+                    try {
+                        fetch(baseUrl + apiKey + newDate)
+                            .then(response => response.json())
+                            .then(json => {
+                                displaydata(json)
+                            })
+                    } catch (error) {
+                        console.error('Fetch failed:', error);
+                    }
                 }
+
+                function displaydata(data) {
+                    title.innerHTML = data.title;
+                    if (data.hasOwnProperty("copyright")) {
+                        copyright.innerHTML = data.copyright;
+                    } else {
+                        copyright.innerHTML = ""
+                    }
+
+                    if (data.media_type == "video") {
+                        mediaSection.innerHTML = videoSection;
+                        document.getElementById("videoLink").src = data.url;
+
+                    } else {
+                        mediaSection.innerHTML = imageSection;
+                        document.getElementById("hdimg").href = data.hdurl;
+                        document.getElementById("image_of_the_day").src = data.url;
+                    }
+
+                    information.innerHTML = data.explanation
+                }
+
+                fetchData()
             }
 
-            function displaydata(data) {
-                title.innerHTML = data.title;
-                if (data.hasOwnProperty("copyright")) {
-                    copyright.innerHTML = data.copyright;
-                } else {
-                    copyright.innerHTML = ""
-                }
-
-                if (data.media_type == "video") {
-                    mediaSection.innerHTML = videoSection;
-                    document.getElementById("videoLink").src = data.url;
-
-                } else {
-                    mediaSection.innerHTML = imageSection;
-                    document.getElementById("hdimg").href = data.hdurl;
-                    document.getElementById("image_of_the_day").src = data.url;
-                }
-
-                information.innerHTML = data.explanation
-            }
-
-            fetchData()
-
+            nasarequested()
         </script>
 
     </div>
