@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Leerdoelen & Reflectie - Lars van Duijnhoven - Portfolio
+  </title>
+
+  <link rel="stylesheet" href="styling.css">
+
+  <!-- Lightbox code, see https://basiclightbox.electerious.com/ for more information -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js" defer></script>
+  <script src="lightbox_images.js" defer></script>
+
+
+  <div class="navbar" id="navbar">
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(html => { document.getElementById('navbar').innerHTML = html; });
+    </script>
+  </div>
+  
+  <h3 class="nav-title"> Leerdoelen & Reflectie - Lars van Duijnhoven - Portfolio</h3>
+  <div class="nav-spacer"></div>
+
+</head>
+
+<body>
+
+  <img src="./images/11-09-2025_1.jpg"
+    alt="Foto -." width="500">
+
+
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer').innerHTML = html; });
+  </script>
+
+</body>
+
+
+</html>

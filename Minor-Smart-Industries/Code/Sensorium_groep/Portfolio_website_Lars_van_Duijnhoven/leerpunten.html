@@ -6,59 +6,26 @@
     Leerpunten/logboek - Lars van Duijnhoven - Portfolio
   </title>
 
+  <link rel="stylesheet" href="styling.css">
+
   <!-- Lightbox code, see https://basiclightbox.electerious.com/ for more information -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js" defer></script>
+  <script src="lightbox_images.js" defer></script>
 
-  <script>
-    document.addEventListener('click', (e) => {
-      const img = e.target.closest('img');
-      if (!img) return;
 
-      const src = img.dataset.full || img.src;
-      const alt = img.getAttribute('alt') || '';
-
-      let onEsc;
-
-      const instance = basicLightbox.create(
-        `<img src="${src}" alt="${alt}">`,
-        {
-          onShow: () => {
-            document.body.classList.add('bl-open');
-            onEsc = (ev) => {
-              if (ev.key === 'Escape' || ev.key === 'Esc') {
-                instance.close();
-              }
-            };
-            document.addEventListener('keydown', onEsc);
-          },
-          onClose: () => {
-            document.body.classList.remove('bl-open');
-            document.removeEventListener('keydown', onEsc);
-          }
-        }
-      );
-
-      instance.show();
-    });
-  </script>
-
-  <div class="navbar" id="navbar"> </div>
-  <script>
-    fetch('navbar.html')
-      .then(response => response.text())
-      .then(html => { document.getElementById('navbar').innerHTML = html; });
-  </script>
-
-  <link rel="stylesheet" href="styling.css">
+  <div class="navbar" id="navbar">
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(html => { document.getElementById('navbar').innerHTML = html; });
+    </script>
+  </div>
 
   <h3 class="nav-title"> Leerpunten - Lars van Duijnhoven - Portfolio</h3>
   <div class="nav-spacer"></div>
 
 </head>
-
-
-<!-- Lightbox overlay: view https://basiclightbox.electerious.com/ for more information -->
 
 
 
@@ -87,11 +54,13 @@
 
   <h2>10-09-2025</h2>
   <p>We moesten een BMC maken van een Turks verzekeringsbedrijf met specifieke categorie auto's. Na wat overleg en
-    aanpassingen is de foto hieronder waar we mee kwamen.</p>
+    aanpassingen is de foto hieronder waar onze groep mee kwam.</p>
   <img src="./images/10-09-2025_1.jpg" alt="Foto van BMC voor oplossing" width="500">
   <p>Hieronder is dan de foto van onze BMC nadat we de oplossing gehoord hadden gekregen en waarna we hem aan moesten
-    passen. Ik heb hiervan geleerd hoe een BMC werkt, waarom je er een zou maken en hoe je er een in kan vullen.</p>
-  <img src="./images/10-09-2025_1.jpg" alt="Foto van BMC na oplossing directe relaties klanten" width="500">
+    passen. Ik heb hiervan geleerd hoe een BMC werkt, bijvoorbeeld hoe je een bedrijf beter kan begrijpen nadat je een
+    BMC gemaakt hebt, omdat je over alles na moet denken.
+    Daarnaast heb ik ook geleerd waarom je er een zou maken en hoe je er een in kan vullen.</p>
+  <img src="./images/10-09-2025_2.jpg" alt="Foto van BMC na oplossing directe relaties klanten" width="500">
   <br>
 
   <h2>11-09-2025</h2>
@@ -197,6 +166,38 @@
 
   <h2>22-10-2025</h2>
   <p>Helaas was ik afwezig bij deze les en heb ik hier dus niks van geleerd.</p>
+  <br>
+
+  <h2>12-11-2025</h2>
+  <p>Op deze dag was Pitstop 1 van het project, dus hebben we moeten presenteren hoe het ervoor stond.
+    Verder hebben we les gehad over verschillende kleuren personen en bedrijven voor verandering binnen een bedrijf.
+    Hier heb ik van geleerd dat je dynamisch moet zijn met je aanpak als je bedrijfsprocessen wilt veranderen, omdat sommige bedrijven er anders mee om gaan dan anderen.
+  </p>
+  <img src="./images/12-11-2025_kleurenprofiel.png" alt="Foto kleurenprofiel Lars" width="500">
+  <img src="./images/12-11-2025_veranderbereidheid.jpg" alt="Foto veranderbereidheid project Sensorium" width="500">
+  <br>
+
+  <h2>13-11-2025</h2>
+  <p>Hier hebben we extra uitleg gehad over ontwerpen maken voor de 3d printer in Solidworks en 's middags soldeerles gehad. Eigenlijk ben ik hier met mijn eigen ding bezig geweest.
+    Ik heb mijn bak ontwerp dus aangepast en bijna overal headers op gesoldeerd. Zie de foto's hieronder.
+  </p>
+    <img src="./images/13-11-2025_solderen_1.jpg" alt="Foto solderen 1" width="500">
+    <img src="./images/13-11-2025_solderen_2.jpg" alt="Foto solderen 2" width="500">
+    <img src="./images/13-11-2025_solderen_3.jpg" alt="Foto solderen 3" width="500">
+    <img src="./images/13-11-2025_solderen_4.jpg" alt="Foto solderen 4" width="500">
+
+  <br>
+
+  <h2>26-11-2025</h2>
+  <p>A</p>
+  <br>
+
+  <h2>27-11-2025</h2>
+  <p>A</p>
+  <br>
+
+  <h2>04-12-2025</h2>
+  <p>A</p>
   <br>
 
   <div id="footer"></div>

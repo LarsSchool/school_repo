@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="nl">
 
 <head>
     <title>
@@ -7,12 +6,13 @@
     </title>
     <link rel="stylesheet" href="styling.css">
 
-    <div class="navbar" id="navbar"> </div>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(html => { document.getElementById('navbar').innerHTML = html; });
-    </script>
+    <div class="navbar" id="navbar">
+        <script>
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(html => { document.getElementById('navbar').innerHTML = html; });
+        </script>
+    </div>
     <h3 class="nav-title"> Home - Lars van Duijnhoven - Portfolio</h3>
     <div class="nav-spacer"></div>
 
@@ -25,9 +25,11 @@
         <H1>Welkom bij de portfolio pagina van Lars van Duijnhoven</H1>
 
         <p>
-            Deze volledige website is gemaakt in HTML, CSS en JS. Dit houdt dus ook in dat ik geen Bootstrap of andere
+            Deze volledige website (inclusief de portfolio pagina van hiervoor) is gemaakt in HTML, CSS en JS. Dit houdt dus ook in dat ik geen Bootstrap of andere
             frameworks heb gebruikt (ook geen Wordpress). Dit is een bewuste keuze geweest, omdat ik het mijzelf iets
-            lastiger wilde maken.
+            lastiger wilde maken. Hiernaast wilde ik meer over JS leren, omdat mijn enigste ervaring hiermee al ruim 2 jaar geleden is.
+            Verder noem ik het project soms het PWS, dit staat voor het 'Plant Water Systeem'.
+            Hieronder staan 2 API's die we in de les behandeld hebben en toe moesten passen op onze website
         </p>
 
         <div id="weather">
@@ -97,11 +99,13 @@
 
         <form id="nasa-form">
             <label for="datepicker" style="white-space: pre-line">
-                (Werkt niet meer na
-                bezuinigingen Trump)
-                
-                Pick a date:
+                (Werkt(e) niet meer vanaf 01-10-2025
+                i.v.m. bezuinigingen Trump)
+
+                Kies een datum 
+                Let op! Amerikaans formaat:
                 <input id="datepicker" type="date" min="" max="">
+  
             </label>
         </form>
 

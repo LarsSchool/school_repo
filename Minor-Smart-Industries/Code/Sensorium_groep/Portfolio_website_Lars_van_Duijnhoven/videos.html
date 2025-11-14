@@ -8,12 +8,14 @@
 
     <link rel="stylesheet" href="styling.css">
 
-    <div class="navbar" id="navbar"> </div>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(html => { document.getElementById('navbar').innerHTML = html; });
-    </script>
+    <div class="navbar" id="navbar">
+        <script>
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(html => { document.getElementById('navbar').innerHTML = html; });
+        </script>
+    </div>
+    
     <h3 class="nav-title"> Video's - Lars van Duijnhoven - Portfolio</h3>
     <div class="nav-spacer"></div>
 </head>
