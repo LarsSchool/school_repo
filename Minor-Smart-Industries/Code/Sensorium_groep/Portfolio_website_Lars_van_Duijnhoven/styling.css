@@ -26,15 +26,11 @@ h1 {
   margin: 50px 550px;
 }
 
-.leerpunten {
+.standard_format {
   color: rgb(56, 56, 56);
   text-align: center;
   font-size: 18px;
   line-height: 1.8;
-}
-
-.leerpunten p,
-img {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
