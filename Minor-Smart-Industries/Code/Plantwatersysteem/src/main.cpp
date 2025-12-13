@@ -2,6 +2,9 @@
 #include <vector>
 
 // See the actual loop and setup at the bottom of the page.
+// I decided to keep the code in one file, since its such little code that it would be more of a hassle to seperate
+// it into multiple .c and .h files than it is to keep this readable. I have already seperated the code into sections,
+// so its easier to read and seperate it into multiple files, if needed.
 
 // Software timer(s) code
 // ------------------------------------------------------------------------------------------------------------
@@ -12,7 +15,7 @@ enum Components {
   DHTSensor,
   KaKu,
   WiFiComponent,
-  LCDDisplay
+  OLEDDisplay
 };
 
 uint8_t numberOfComponents = 7;
@@ -27,7 +30,7 @@ void softwareTimerSetup() {
   timers[DHTSensor] = currentTimeMillis;
   timers[KaKu] = currentTimeMillis;
   timers[WiFiComponent] = currentTimeMillis;
-  timers[LCDDisplay] = currentTimeMillis;
+  timers[OLEDDisplay] = currentTimeMillis;
 }
 
 // OLED Display screen Code
@@ -48,8 +51,7 @@ void setupOLED() {
   // Initialize the OLED display
   if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F("SSD1306 allocation failed"));
-    for (;;)
-      ;
+    for (;;);
   }
 
   display.clearDisplay();
@@ -57,7 +59,7 @@ void setupOLED() {
 }
 
 void loopOLED() {
-  if (currentTimeMillis - timers[LCDDisplay] < 300) {
+  if (currentTimeMillis - timers[OLEDDisplay] < 300) {
 
     // Clear the display before each frame
     display.clearDisplay();
@@ -71,7 +73,7 @@ void loopOLED() {
     // Display the frame on the OLED
     display.display();
 
-    timers[LCDDisplay] = currentTimeMillis;
+    timers[OLEDDisplay] = currentTimeMillis;
   }
 }
 
@@ -204,13 +206,15 @@ int lightValue;
 void setupLDR() {
   pinMode(ldrPin, INPUT);
   pinMode(ledPin, OUTPUT);
+  Serial.println("LDR setup test");
   lightInitial = analogRead(ldrPin);
 }
 
 void loopLDR() {
   if (currentTimeMillis - timers[LDRSensor] > 100) {
     lightValue = analogRead(ldrPin);
-    Serial.println("lightvalue: " + lightValue);
+    Serial.print("lightvalue: ");
+    Serial.println(lightValue);
     if (lightInitial - lightValue >= 200) {
       digitalWrite(ledPin, HIGH);
     }
@@ -371,10 +375,10 @@ void setup() {
   Serial.begin(9600);
   Serial.println("Started the setup sequence.");
   softwareTimerSetup();
-  // setupLDR();
-  // setupMoist();
+  setupLDR();
+  setupMoist();
   // setupWaterPump();
-  // setupDHT();
+  setupDHT();
   // setupKaKu();
   // setupWifi();
   setupOLED();
@@ -385,21 +389,21 @@ uint64_t startLoopTime = millis();
 
 void loop() {
   if (millis() - startLoopTime > 150) {
-    // loopLDR();
-    // currentTimeMillis = millis();
-    // loopMoist();
-    // currentTimeMillis = millis();
-    // loopWaterPump();
-    // currentTimeMillis = millis();
-    // loopDHT();
-    // currentTimeMillis = millis();
-    // // loopKaKu();
-    // // currentTimeMillis = millis();
-    // loopWifi();
-    // currentTimeMillis = millis();
-    loopOLED();
-    currentTimeMillis = millis();
-    // Serial.println("Completed loop cycle.");
-    // startLoopTime = millis();
+  // loopLDR();
+  // currentTimeMillis = millis();
+  loopMoist();
+  currentTimeMillis = millis();
+  // loopWaterPump();
+  // currentTimeMillis = millis();
+  // loopDHT();
+  // currentTimeMillis = millis();
+  // loopKaKu();
+  // currentTimeMillis = millis();
+  // loopWifi();
+  // currentTimeMillis = millis();
+  // loopOLED();
+  // currentTimeMillis = millis();
+  // Serial.println("Completed loop cycle.");
+  startLoopTime = millis();
   }
 }
