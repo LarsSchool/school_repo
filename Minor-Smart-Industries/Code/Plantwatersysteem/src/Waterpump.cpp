@@ -8,12 +8,16 @@ void setupWaterPump() { pinMode(waterPumpPin, OUTPUT); }
 
 void loopWaterPump() {
   if (currentTimeMillis - timers[WaterPump] > 1000 && !pumpStateOn) {
-    Serial.println("Pump is now on");
+    if (getDebugMode()) {
+      Serial.println("Pump is now on");
+    }
     digitalWrite(waterPumpPin, HIGH);
     pumpStateOn = true;
     timers[WaterPump] = currentTimeMillis;
   } else if (currentTimeMillis - timers[WaterPump] > 1000 && pumpStateOn) {
-    Serial.println("Pump is now off");
+    if (getDebugMode()) {
+      Serial.println("Pump is now off");
+    }
     digitalWrite(waterPumpPin, LOW);
     pumpStateOn = false;
     timers[WaterPump] = currentTimeMillis;

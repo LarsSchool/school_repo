@@ -15,9 +15,15 @@ enum Components {
 };
 
 extern uint8_t numberOfComponents;
+
+extern bool debugMode;
+
 extern uint64_t currentTimeMillis;
 extern std::vector<uint64_t> timers;
 
 void softwareTimerSetup();
+void setDebugMode(bool mode);
+bool getDebugMode();
+
 
 #endif // COMMON_H

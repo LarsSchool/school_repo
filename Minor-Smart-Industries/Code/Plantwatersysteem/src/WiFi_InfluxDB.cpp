@@ -1,3 +1,6 @@
+// Spoiler: this file hasn't  been changed since the lesson we had this, 
+// so unlike the others, it has not received a lot of attention in becoming pretty/ more readable.
+
 #include "WiFi_InfluxDB.h"
 #include "DHT_sensor.h"
 #include "Moist_sensor.h"

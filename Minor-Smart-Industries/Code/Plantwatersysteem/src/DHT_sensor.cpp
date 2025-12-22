@@ -1,6 +1,6 @@
 #include "DHT_sensor.h"
-#include <DHT.h>
 #include <Arduino.h>
+#include <DHT.h>
 
 #define DHTPIN 32
 #define DHTTYPE DHT11
@@ -10,7 +10,9 @@ static float lastHumidity = NAN;
 static float lastTemperature = NAN;
 
 void setupDHT() {
-  Serial.println(F("DHT11 test!"));
+  if (getDebugMode()) {
+    Serial.println(F("DHT11 test!"));
+  }
   dht.begin();
 }
 
@@ -28,11 +30,13 @@ void loopDHT() {
     lastHumidity = h;
     lastTemperature = t;
 
-    Serial.print(F("Humidity: "));
-    Serial.print(h);
-    Serial.print(F("%  Temperature: "));
-    Serial.print(t);
-    Serial.println(F("°C "));
+    if (getDebugMode()) {
+      Serial.print(F("Humidity: "));
+      Serial.print(h);
+      Serial.print(F("%  Temperature: "));
+      Serial.print(t);
+      Serial.println(F("°C "));
+    }
 
     timers[DHTSensor] = currentTimeMillis;
   }

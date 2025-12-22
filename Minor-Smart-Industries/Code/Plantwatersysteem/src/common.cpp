@@ -1,6 +1,8 @@
 #include "common.h"
 
 uint8_t numberOfComponents = 7;
+bool debugMode = false;
+
 uint64_t currentTimeMillis = 0;
 std::vector<uint64_t> timers(numberOfComponents, 0);
 
@@ -9,4 +11,12 @@ void softwareTimerSetup() {
   for (uint8_t i = 0; i < numberOfComponents; ++i) {
     timers[i] = currentTimeMillis;
   }
+}
+
+void setDebugMode(bool mode) {
+  debugMode = mode;
+}
+
+bool getDebugMode() {
+  return debugMode;
 }
