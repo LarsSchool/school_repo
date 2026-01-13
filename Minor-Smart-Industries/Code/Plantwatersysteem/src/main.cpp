@@ -11,52 +11,57 @@
 
 #include "switchKaKu.h"
 
-#define TRANSMITTERID1 202505
+#define TRANSMITTERID1 202504
 #define rfPin 25
 
 const uint8_t DELAY_BETWEEN_LOOPS_MS = 150;
+uint64_t startLoopTime;
 
 void setup() {
-  // setDebugMode(false); // Enable or disable debug prints.
+  setDebugMode(false); // Enable or disable debug prints.
 
-  // Serial.begin(9600);
-  // Serial.println("Started the setup sequence.");
+  Serial.begin(9600);
+  Serial.println("Started the setup sequence.");
 
-  // softwareTimerSetup();
-  // setupLDR();
-  // setupMoist();
-  // setupWaterPump();
-  // setupDHT();
+  softwareTimerSetup();
+
+  // Only needed if the KaKu hasnt been plugged in and isnt set up from a
+  // previous run, but can be on everytime just in case. If the KaKu hasnt been
+  // setup, plug it in and then run the setup directly after, you have a window
+  // of around 10-20 seconds to do this.
+  setupKaKu();
+
+  setupLDR();
+  setupMoist();
+  setupWaterPump();
+  setupDHT();
+  setupOLED();
+
   // setupWifi();
-  // setupOLED();
-  // setupKaKu();
 
-  // Serial.println("Starting the loop sequence.");
+  Serial.println("Starting the loop sequence.");
+  startLoopTime = millis();
 }
 
-uint64_t startLoopTime = millis();
-
 void loop() {
+  if (millis() - startLoopTime > DELAY_BETWEEN_LOOPS_MS) {
+    loopKaKu();
+    currentTimeMillis = millis();
 
-  switchKaku(rfPin, TRANSMITTERID1, 1, 1, true, 3);
-  delay(500);
-  
-  // if (millis() - startLoopTime > DELAY_BETWEEN_LOOPS_MS) {
-    // loopLDR();
-    // currentTimeMillis = millis();
-    // loopMoist();
-    // currentTimeMillis = millis();
-    // loopWaterPump();
-    // currentTimeMillis = millis();
-    // loopDHT();
-    // currentTimeMillis = millis();
+    loopLDR();
+    currentTimeMillis = millis();
+    loopMoist();
+    currentTimeMillis = millis();
+    loopWaterPump();
+    currentTimeMillis = millis();
+    loopDHT();
+    currentTimeMillis = millis();
+    loopOLED();
+    currentTimeMillis = millis();
+
     // loopWifi();
     // currentTimeMillis = millis();
-    // loopOLED();
-    // currentTimeMillis = millis();
-    // loopKaKu();
-    // currentTimeMillis = millis();
 
-    // startLoopTime = millis();
-  // }
+    startLoopTime = millis();
+  }
 }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Sensorium Project - Lars van Duijnhoven - Portfolio
+  </title>
+
+  <link rel="stylesheet" href="styling.css">
+
+  <!-- Lightbox code, see https://basiclightbox.electerious.com/ for more information -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js" defer></script>
+  <script src="lightbox_images.js" defer></script>
+
+
+  <div class="navbar" id="navbar">
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(html => { document.getElementById('navbar').innerHTML = html; });
+    </script>
+  </div>
+
+  <h3 class="nav-title"> Sensorium Project - Lars van Duijnhoven - Portfolio</h3>
+  <div class="nav-spacer"></div>
+
+</head>
+
+<body>
+  <div class="standard_format">
+
+    <p>Deze pagina bevat de persoonlijke reflectie/ terugblik op wat ik (Lars) allemaal heb gedaan tijdens het Sensorium
+      project, maar vooral ook wat ik heb geleerd.</p>
+
+    <br>
+
+    <p>Helemaal in het begin begon het al met dat ik moest vertalen waar ik en de opdrachtgever het over hadden.
+      Dit heb ik gedaan door 2 schetsen te maken, namelijk een data flow schets en een implementatie schets.
+      Op deze manier hoopte ik dat mijn groepsgenoten een beter begrip zouden krijgen van hoe het systeem eruit zou
+      zien.
+    </p>
+    <img src="./images/Sensorium_data_flow_schets.jpg" alt="Foto Data Flow schets voor het project" width="500">
+    <img src="./images/Sensorium_implementatie_schets.jpg" alt="Foto implementatie schets voor het project" width="500">
+    <p>Naar mijn idee hebben deze schetsen wel gewerkt, omdat ik ook a.d.h.v. de afbeeldingen het kon uitleggen.
+      Ik zal dit zeker onthouden voor in de toekomst, omdat ik heb geleerd dat dit een best effectieve manier is van
+      technische dingen uitleggen aan niet technische mensen.
+    </p>
+
+    <br>
+
+    <p>Vervolgens ben ik begonnen met het maken van de opstelling. Dit heb ik gedaan door eerst alle onderdelen te
+      verzamelen.
+    </p>
+    <img src="./images/20-11-2025_ophalen_Sensorium_spullen.jpg"
+      alt="Foto onderdelen opstelling, dus Raspberry Pi 4B, kabels, breadboard en drukknop" width="500">
+
+    <p>Helaas had de Raspberry Pi geen zin om mee te werken en kreeg ik hem niet opgestart na 2 dagen proberen. Hierdoor
+      was ik genoodzaakt om nogmaals naar Doetinchem te rijden, waar we erachter kwamen dat hij het ineens wel gewoon
+      deed.
+      Na wat meer testen thuis en op andere locaties bleek het een probleem te zijn met de monitor die ik gebruikte.
+      Deze was een andere variant van micro-HDMI dan de Raspberry Pi, waardoor niks weergeven werd en de Raspberry Pi
+      niet geïnitieerd werd.
+    </p>
+
+    <p>Ik heb 1 keer eerder met een Raspberry Pi gewerkt, dus dit was een groot leerpunt voor mij. Verder heb ik ook
+      meer
+      geleerd over hoe Python geschreven moet worden.
+      Hierna heb ik namelijk de drukknop aangesloten en code geschreven die ervoor zorgt dat de knop als sensor
+      uitgelezen wordt, maar ook hoe je via je code een MP3 op het systeem kan afspelen.
+      Dit was allemaal nieuwe voor mij, maar zie de video hieronder voor het resultaat.
+    </p>
+
+    <div id="video1" class="video1">
+      <h2>Video 04-12-2025 Test mocken koelkastdeur</h2>
+      <video width="1000" height="750" controls>
+        <source src="videos/04-12-2025_Sensorium_Mock_Koelkastdeur.mp4" type="video/mp4">
+        Your browser does not support HTML5 video
+      </video>
+
+      <p>Om deze database te maken heb ik mijn groepsgenoten het grootste gedeelte laten maken. Hiervoor heb ik wel DB
+        browser geïnstalleerd voor SQLite, zodat ze een visuele weergave hadden.
+        Als ze direct alles in code zouden moeten maken, denk ik dat het niet goed was gekomen.
+      </p>
+
+    </div>
+    <div id="video1" class="video1">
+      <h2>Video 17-12-2025 database gezamenlijk maken voor leerervaring groepsgenoten.</h2>
+      <video width="1000" height="750" controls>
+        <source src="videos/17-12-2025_sensorium_database_maken_SQLite.mp4" type="video/mp4">
+        Your browser does not support HTML5 video
+      </video>
+    </div>
+
+
+    <p>Hierna heb ik ze hun eigen gang laten gaan en heb ik alleen uitgelegd hoe iets werkt en wat we willen, maar niet
+      wat ze zelf moesten doen.
+      Dit zorgde voor de nodige frustraties, denkprocessen en extra uitleg. Hierna hadden ze wel een redelijk begrip van
+      wat ze nou precies gemaakt hadden.
+      Bijvoorbeeld wat een unique key is, wat een primary key is en zulke basis kennis. Aan het eind begonnen ze het
+      zelfs een beetje leuk te vinden :).</p>
+
+    <p>Later zijn we nog een keer bij elkaar gekomen om de AI te programmeren, maar hier is helaas geen video van.
+      Dit heb ik op dezelfde manier aangepakt als hierboven genoemd is. Helaas was dit naar mijn idee toch iets te
+      complex voor ze en heb ik het uiteindelijk moeten integreren, testen en fixen, maar de basis hebben ze wel
+      meegekregen.
+    </p>
+
+    <p>Een onderdeel van deze AI was de clustering en filtering en dit heb ik op enkele manieren uit proberen te leggen.
+      Mijn prachtige tekening is hieronder te vinden, maar hierna begreep mijn groep het wel.
+    </p>
+
+    <img src="./images/24-12-2025_Uitleg_clusters_filters.jpg" alt="Foto van uitleg clusters filters" width="500">
+
+    <p>Hiervan heb ik geleerd hoe ik op een schematische wijze ideeën en visualisaties in mijn hoofd kan overbrengen op
+      anderen, namelijk door het gewoon over te tekenen.
+      Ik ben hier al vaker tegenenaan gelopen, maar vanaf nu neem ik wel een pen en papier mee om altijd dingen te
+      kunnen schetsen :).
+      Dezelfde methode heb ik gebruikt om clustering en filtering uit te leggen in het portfolio aan de opdrachtgever,
+      maar ook om het uit te leggen in de eindpresentatie.
+    </p>
+
+    <br>
+    <p>Uiteindelijk was alles gemaakt en gefixt en toen heb ik video's gemaakt om de functionaliteiten te demonstreren.
+      Deze video ga ik gebruiken voor de eindpresentatie aan de opdrachtgever.
+    </p>
+    <p>Zie deze link voor de demonstratie video: </p>
+    <a href="https://youtu.be/XSC1VT8fT9o">Demonstratie Video Sensorium Project</a>
+
+    <p>De feedback/reactie hierop was TODO, presentatie moet nog gehouden worden.
+    </p>
+
+    <br>
+        <p>We hebben enkele documenten, zoals de business case, TOM en het communicatieplan niet gemaakt in dit project.
+          Dit heeft als voornaamste reden dat dit een Proof of Concept is en de constructie van klant en opdrachtgever anders ingedeeld is dan bij normalere projecten.
+          We kunnen wel een business case maken, maar dit heeft niet zo veel nut voor een POC, dit is relevanter bij een prototype. De opdrachtgever heeft er namelijk niks aan als hij weet hoe duur een POC is.
+          Verder is onze klant de demente ouderen/ mantelzorgers, maar zou dit product waarschijnlijk verkocht worden aan een tussenpartij.
+    </p>
+
+  </div>
+
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(html => { document.getElementById('footer').innerHTML = html; });
+  </script>
+
+</body>
+
+
+</html>
