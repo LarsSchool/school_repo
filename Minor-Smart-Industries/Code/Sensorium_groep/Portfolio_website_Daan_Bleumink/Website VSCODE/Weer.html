@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weer en Tijd Nijmegen</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0c10;
+      color: #e8ecf1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 { margin-bottom: 20px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #12141a;
+      border: 1px solid #1f2430;
+      font-size: 16px;
+      margin: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Weer en Tijd  </h1>
+
+  <div class="chip">📅 Datum: <span id="api-datum">—</span></div>
+  <div class="chip">⏰ Tijd: <span id="api-tijd">—</span></div>
+  <div class="chip">📍 Stad: <span id="api-stad">Nijmegen</span></div>
+  <div class="chip">🌡️ Temperatuur: <span id="api-temp">—</span> °C</div>
+  <div class="chip">☁️ Weer: <span id="api-weer">—</span></div>
+
+  <script>
+  async function updateWeer() {
+    try {
+      // 1️⃣ Haal locatie op via IP
+      const locRes = await fetch('https://ipapi.co/json/');
+      const locData = await locRes.json();
+      const stad = locData.city || "Onbekend";
+
+      // 2️⃣ Haal weer op via OpenWeatherMap
+      const apiKey = "edcacc401aee4d284c73d87a0bc22da5";
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${stad}&units=metric&appid=${apiKey}&lang=nl`;
+
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("Kon weerdata niet ophalen");
+
+      const data = await res.json();
+      const temp = Math.round(data.main.temp);
+      const weer = data.weather[0].description;
+
+      // 3️⃣ Datum en tijd lokaal
+      const nu = new Date();
+      const datum = nu.toLocaleDateString('nl-NL', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
+      const tijd = nu.toLocaleTimeString('nl-NL', { hour:'2-digit', minute:'2-digit' });
+
+      // 4️⃣ Vul HTML
+      document.getElementById('api-datum').textContent = datum;
+      document.getElementById('api-tijd').textContent = tijd;
+      document.getElementById('api-stad').textContent = stad;
+      document.getElementById('api-temp').textContent = temp;
+      document.getElementById('api-weer').textContent = weer;
+
+    } catch (error) {
+      console.error("Fout bij ophalen API:", error);
+      document.getElementById('api-datum').textContent = "—";
+      document.getElementById('api-tijd').textContent = "—";
+      document.getElementById('api-stad').textContent = "Onbekend";
+      document.getElementById('api-temp').textContent = "—";
+      document.getElementById('api-weer').textContent = "Fout";
+    }
+  }
+
+  // Initial load
+  updateWeer();
+
+  // Update elke minuut
+  setInterval(updateWeer, 60000);
+</script>

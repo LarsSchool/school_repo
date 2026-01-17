@@ -66,9 +66,9 @@ body {
 } */
 
 @media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 0;
-  }
+    .featurette-heading {
+        margin-top: 0;
+    }
 }
 
 .navbar-dark .dropdown-menu {

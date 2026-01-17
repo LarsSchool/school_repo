@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daan Bleumink — Portfolio</title>
+  <meta name="description" content="Uitgebreide portfolio van Daan Bleumink: projecten, ervaring, skills en contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0c10;             /* achtergrond */
+      --bg-soft: #12141a;        /* zachte panel achtergrond */
+      --text: #e8ecf1;           /* primaire tekst */
+      --muted: #9aa4b2;          /* secundaire tekst */
+      --brand: #4f86ff;          /* merk-kleur */
+      --brand-2: #8a5cff;        /* accent-kleur 2 */
+      --ok: #2ecc71;
+      --warn: #f39c12;
+      --err: #e74c3c;
+      --card: #0f1117;
+      --border: #1f2430;
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(0,0,0,.25);
+      --maxw: 1200px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fb;
+        --bg-soft: #ffffff;
+        --text: #0c1222;
+        --muted: #586173;
+        --brand: #2f6aff;
+        --brand-2: #7a44ff;
+        --card: #ffffff;
+        --border: #e6e9f0;
+      }
+      .glass { backdrop-filter: saturate(120%) blur(10px); }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, var(--bg) 0%, #0b0c10 70%, #0b0c10 100%);
+      color: var(--text);
+    }
+
+    /* Utilities */
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+    .grid { display: grid; gap: 24px; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius: 12px; text-decoration:none; font-weight:600; border:1px solid var(--border); background: linear-gradient(180deg, var(--brand), var(--brand-2)); color:#fff; box-shadow: var(--shadow); }
+    .btn.ghost { background: transparent; color: var(--text); border:1px solid var(--border); box-shadow:none; }
+    .chip { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius: 999px; background: var(--bg-soft); border:1px solid var(--border); color: var(--muted); font-size: 12px; }
+    .card { background: var(--card); border:1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .muted { color: var(--muted); }
+    .section-title { font-size: clamp(24px, 2.5vw, 36px); margin: 0 0 8px; }
+    .section-sub { margin: 0 0 24px; color: var(--muted); }
+
+    /* Skip link */
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px; background: var(--brand); color: #fff; border-radius: 8px; }
+
+    /* Navbar */
+    header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: rgba(11,12,16,.7); border-bottom: 1px solid var(--border); }
+    nav .inner { display:flex; align-items:center; justify-content:space-between; padding: 14px 0; }
+    nav a { color: var(--text); text-decoration: none; font-weight: 600; }
+    nav ul { list-style: none; display:flex; gap: 18px; margin:0; padding:0; }
+    .logo { font-weight: 800; letter-spacing: .3px; }
+
+    /* Hero */
+    .hero { padding: 72px 0 48px; }
+    .hero .wrap { display:grid; gap:32px; grid-template-columns: 1.2fr .8fr; align-items:center; }
+    .hero h1 { font-size: clamp(32px, 5vw, 56px); margin: 0 0 12px; line-height: 1.05; }
+    .hero p { font-size: 18px; color: var(--muted); }
+    .stat { display:flex; flex-direction:column; background: var(--card); border:1px solid var(--border); padding:18px; border-radius: 14px; }
+
+    /* Sections */
+    section { padding: 56px 0; }
+
+    /* Skills */
+    .skills-list { display:flex; flex-wrap:wrap; gap: 12px; }
+
+    /* Timeline */
+    .timeline { position: relative; }
+    .timeline::before { content:""; position:absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+    .t-item { position: relative; padding-left: 36px; margin-bottom: 22px; }
+    .t-item::before { content:""; position:absolute; left: 6px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 4px rgba(79,134,255,.2); }
+    .t-card h4 { margin:0 0 4px; }
+
+    /* Projects */
+    .filters { display:flex; flex-wrap:wrap; gap: 10px; margin-bottom: 20px; }
+    .projects { grid-template-columns: repeat(3, 1fr); }
+    .project { overflow: hidden; display:flex; flex-direction:column; }
+    .project img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-bottom: 1px solid var(--border); }
+    .project .p-body { padding: 16px; display:flex; flex-direction:column; gap: 10px; }
+    .project .meta { display:flex; justify-content:space-between; align-items:center; }
+
+    /* Testimonials */
+    .testimonial { padding: 18px; }
+    .quote { font-style: italic; }
+
+    /* Blog */
+    .posts { grid-template-columns: repeat(3, 1fr); }
+    .post { overflow: hidden; }
+    .post img { width:100%; aspect-ratio: 16/9; object-fit: cover; }
+    .post .p-body { padding: 14px 16px 18px; }
+
+    /* Contact */
+    form { display:grid; gap: 14px; }
+    input, textarea, select { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-soft); color: var(--text); }
+    textarea { min-height: 140px; resize: vertical; }
+    .form-row { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    /* Footer */
+    footer { padding: 36px 0; border-top: 1px solid var(--border); color: var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .hero .wrap { grid-template-columns: 1fr; }
+      .projects, .posts { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      nav ul { display:none; }
+      .projects, .posts { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero { padding-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Ga naar hoofdinhoud</a>
+  <header>
+    <nav class="container">
+      <div class="inner">
+        <ul aria-label="Primaire navigatie">
+          <li><a href="#about">Over mij</a></li>
+          <li><a href="#lessen">Lessen</a></li>
+          <li><a href="#Api's">Api's</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container wrap">
+        <div>
+          <h1>Portfolio Daan Bleumink, 
+            <h1>Minor Smart Industry.</h1>
+          <p>In dit portfolio beschrijf ik wat ik geleerd heb tijdens mijn tijd aan de Minor Smart Industry. Veel lees en leer plezier.</p>
+          <div style="display:flex; gap:12px; margin-top: 18px;">
+          </div>
+          <div class="grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 24px;">
+            <div class="stat"><span class="muted">Ervaring Business</span><strong style="font-size:24px;">6.5</strong></div>
+            <div class="stat"><span class="muted">Ervaring Technology</span><strong style="font-size:24px;">9</strong></div>
+            <div class="stat"><span class="muted">Ervaring Connection</span><strong style="font-size:24px;">7.5</strong></div>
+            <div class="stat"><span class="muted">Ervaring Project</span><strong style="font-size:24px;">8</strong></div>
+
+        </div>
+      
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">Over mij</h2>
+        <p class="section-sub">Dit portfolio is gemaakt door Daan Bleumink een 20 jarige opkomende commerciele econoom die de basis kennis van de technologie wilde leren.</p>
+        <div class="grid" style="grid-template-columns: 10000.0fr .8fr;">
+          <div class="card" style="padding: 20px;">
+            <h3>Wie ben ik?</h3>
+            <p class="muted">Mijn naam is Daan Bleumink. 
+              Ik heb deze minor gekozen met de verwachting meer te leren over techniek. 
+              Voordat ik begon aan mijn studie Commerciële Economie heb ik een afweging gemaakt tussen verschillende economische opleidingen en 
+              technische studies zoals Automotive en Bouwkunde. Uiteindelijk heb ik gekozen voor Commerciële Economie, omdat de baankansen
+               en het toekomstbeeld beter bij mij pasten en omdat ik al meer kennis had van dit vakgebied.
+              <p class="muted">Ik ben opgegroeid zonder een technische of “handige” achtergrond. 
+                Automotive vond ik interessant vanwege het leren over auto’s en Bouwkunde vanwege het verkrijgen van kennis over gebouwen,
+                 maar ik heb nooit de ambitie gehad om daadwerkelijk in deze sectoren te werken. Bij economische studies voelde ik mij
+                  meer op mijn plek. Hoewel ik nog steeds niet exact weet wat ik later wil doen, heb ik door mijn studie wel een
+                   beter beeld van mijn toekomst gekregen.
+                   <p class="muted">De minor Smart Industry zag ik als een kans om alsnog technische kennis op te doen, 
+                    terwijl ik tegelijkertijd vanuit een economische invalshoek bleef werken. Op meerdere vlakken heeft de
+                     minor mij positief verrast, vooral door te merken hoeveel je in korte tijd kunt leren op technisch gebied.</p>
+</h3>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="lessen">
+      <div class="container">
+        <h2 class="section-title">Lessen</h2>
+        <p class="section-sub">Ik heb een reflectie gemaakt op de verschillende lesblokken als in beschreven op Brightspace.</p>
+        <div class="filters" role="tablist" aria-label="Project filter">
+        
+       <div class="grid projects">
+   <!-- Bovenste 3 kaarten -->
+  <article class="card project" data-category="design frontend">
+    <img src="Smart Business Website.png" alt="Smart Business cover" />
+    <div class="p-body">
+      <div class="meta">
+        <h3 style="margin:0; font-size: 18px;">Smart Business</h3>
+      </div>
+      <p class="muted">Vanuit mijn opleiding ben ik al goed bekend met economische principes en modellen.</p>
+      <div style="display:flex; gap:10px;">
+        <a class="btn" href="project-smart-business.html">Verder lezen...</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card project" data-category="frontend fullstack">
+    <img src="" alt="Lezing Maarten cover" />
+    <div class="p-body">
+      <div class="meta">
+        <h3 style="margin:0; font-size: 18px;">Lezing Maarten</h3>
+      </div>
+      <p class="muted">De lezingen van Maarten waren interessant en leerzaam.</p>
+      <div style="display:flex; gap:10px;">
+        <a class="btn" href="project-lezing-maarten.html">Verder lezen...</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card project" data-category="design">
+    <img src="2ef06310-ac64-4478-a479-dde4f111bab8.png" alt="Smart Technology cover" />
+    <div class="p-body">
+      <div class="meta">
+        <h3 style="margin:0; font-size: 18px;">Smart Technology</h3>
+      </div>
+      <p class="muted">Het bouwen van een Internet of Things-schakeling, het plantwatersysteem, was voor mij een bijzondere en leerzame ervaring.</p>
+      <div style="display:flex; gap:10px;">
+        <a class="btn" href="project-smart-technology.html">Verder lezen...</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Onderste 3 kaarten -->
+  <article class="card project" data-category="fullstack design">
+    <img src="09828a0a-3e78-4495-a0f3-b874e896565c.png" alt="Smart Connection cover" />
+    <div class="p-body">
+      <div class="meta">
+        <h3 style="margin:0; font-size: 18px;">Smart Connection</h3>
+      </div>
+      <p class="muted">De lessen over de geschiedenis en het gebruik van AI hebben mij minder geleerd over hoe ik AI en Data Science concreet in mijn voordeel kan gebruiken, wat ik jammer vond.</p>
+      <div style="display:flex; gap:10px;">
+        <a class="btn" href="project-smart-connection.html">Verder lezen...</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card project" data-category="frontend design">
+    <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=1200&auto=format&fit=crop" alt="Smart Project cover" />
+    <div class="p-body">
+      <div class="meta">
+        <h3 style="margin:0; font-size: 18px;">Smart Project</h3>
+      </div>
+      <p class="muted">Impact Smart Solutions gepresenteerd al een opdracht om op zoek te gaan naar “Een Oplossing voor Afnemende zorgcapaciteit.” </p>
+      <div style="display:flex; gap:10px;">
+        <a class="btn" href="project-smart-project.html">Verder lezen...</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card project" data-category="fullstack">
+    <img src="d1ffff42-f50b-49ef-b4bc-5699786e488a.png" alt="Smart Me cover" />
+    <div class="p-body">
+      <div class="meta">
+        <h3 style="margin:0; font-size: 18px;">Smart Me</h3>
+      </div>
+      <p class="muted">Mijn volledige reflectie op alles van de minor en mijn persoonlijke ontwikkeling.</p>
+      <div style="display:flex; gap:10px;">
+        <a class="btn" href="project-smart-me.html">Verder lezen...</a>
+      </div>
+    </div>
+  </article>
+</div>
+
+
+ <!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daan Bleumink — Portfolio</title>
+  <meta name="description" content="Uitgebreide portfolio van Daan Bleumink: projecten, ervaring, skills en contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#0b0c10; --bg-soft:#12141a; --text:#e8ecf1; --muted:#9aa4b2;
+      --brand:#4f86ff; --brand-2:#8a5cff; --card:#0f1117; --border:#1f2430;
+      --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.25); --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui;background:var(--bg);color:var(--text)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    .chip{padding:6px 10px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--border);font-size:12px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    footer{padding:36px 0;border-top:1px solid var(--border);color:var(--muted)}
+  </style>
+</head>
+
+
+ <!-- Api's -->
+    <section id="Api's">
+      <div class="container">
+        <h2 class="section-title">Api's</h2>
+        <p class="section-sub">Ik heb de api's erin gezet van Nasa en heb er een gebouwd voor de tijd en weer in Nijmegen.</p>
+        <div class="filters" role="tablist" aria-label="Project filter">
+<script>
+  // Jaartal
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+<div id="nasa">
+ 
+        <section class="title-section">
+            <h2 id="title"></h2>
+            <p id="date"></p>
+            <small style="display: block;" id="copyright"></small>
+        </section>
+ 
+        <section id="media-section">
+        </section>
+ 
+        <div class="description-nasa">
+            <p id="description-nasa"></p>
+        </div>
+ 
+        <form id="nasa-form">
+            <label for="datepicker" style="white-space: pre-line">
+                (Werkt(e) niet meer vanaf 01-10-2025
+                i.v.m. bezuinigingen Trump)
+ 
+                Kies een datum
+                Let op! Amerikaans formaat:
+                <input id="datepicker" type="date" min="" max="">
+ 
+            </label>
+        </form>
+ 
+        <script lang="text/javascript">
+            const dateInput = document.querySelector("#datepicker");
+            dateInput.addEventListener('change', (e) => {
+                e.preventDefault();
+                nasarequested();
+            })
+ 
+            function nasarequested() {
+                const baseUrl = 'https://api.nasa.gov/planetary/apod?api_key=';
+                const apiKey = "q4oHSUtpq2QkWUbhUxvOjhf7xsScZkwU0Vac8UHL";
+ 
+                const title = document.querySelector("#title");
+                const copyright = document.querySelector("#copyright");
+                const mediaSection = document.querySelector("#media-section");
+                const information = document.querySelector("#description-nasa");
+                const dateElement = document.querySelector("#date");
+ 
+                const imageSection = `<a id="hdimg" href="" target="-blank">
+                    <div class="image-div">
+                    <img id="image_of_the_day" src="" alt="image-by-nasa">
+                    </div>
+                    </a>`
+ 
+                const videoSection = `<div class="video-div"> <iframe id="videoLink" src="" frameborder="0"></iframe></div>`
+ 
+ 
+                const dateInput = document.querySelector("#datepicker");
+                let newDate = "&date=" + dateInput.value + "&";
+ 
+                const currentDate = new Date().toISOString().slice(0, 10);
+                dateInput.max = currentDate;
+                dateInput.min = "1995-06-16";
+ 
+ 
+ 
+                function fetchData() {
+                    try {
+                        fetch(baseUrl + apiKey + newDate)
+                            .then(response => response.json())
+                            .then(json => {
+                                displaydata(json)
+                            })
+                    } catch (error) {
+                        console.error('Fetch failed:', error);
+                    }
+                }
+ 
+                function displaydata(data) {
+                    title.innerHTML = data.title;
+                    if (data.hasOwnProperty("copyright")) {
+                        copyright.innerHTML = data.copyright;
+                    } else {
+                        copyright.innerHTML = ""
+                    }
+ 
+                    if (data.media_type == "video") {
+                        mediaSection.innerHTML = videoSection;
+                        document.getElementById("videoLink").src = data.url;
+ 
+                    } else {
+                        mediaSection.innerHTML = imageSection;
+                        document.getElementById("hdimg").href = data.hdurl;
+                        document.getElementById("image_of_the_day").src = data.url;
+                    }
+ 
+                    information.innerHTML = data.explanation
+                }
+ 
+                fetchData()
+            }
+ 
+            nasarequested()
+        </script>
+ 
+    </div>
+
+  <script>
+    // Jaar in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filters
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const projectCards = document.querySelectorAll('.project');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.setAttribute('aria-selected', 'false'));
+        btn.setAttribute('aria-selected', 'true');
+        const filter = btn.dataset.filter;
+        projectCards.forEach(card => {
+          const cats = card.dataset.category.split(' ');
+          const show = filter === 'all' || cats.includes(filter);
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+
+    // Contact formulier (demo)
+    function handleSubmit() {
+      const status = document.getElementById('form-status');
+      status.textContent = 'Bedankt! Ik neem snel contact op.';
+      setTimeout(() => (status.textContent = ''), 4000);
+    }
+  </script>
+  
+  
+  <!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weer en Tijd Nijmegen</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0c10;
+      color: #e8ecf1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .weather-container {
+      display: flex;
+      flex-direction: column; /* onder elkaar */
+      gap: 12px; /* ruimte tussen de chips */
+      width: 260px; /* vaste breedte voor nette uitlijning */
+    }
+
+    .chip {
+      display: flex;
+      justify-content: space-between; /* label en waarde uit elkaar */
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #12141a;
+      border: 1px solid #1f2430;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <h1>Weer en Tijd in Nijmegen</h1>
+
+  <div class="weather-container">
+    <div class="chip"><span class="label">📅 Datum:</span> <span id="api-datum">—</span></div>
+    <div class="chip"><span class="label">⏰ Tijd:</span> <span id="api-tijd">—</span></div>
+    <div class="chip"><span class="label">📍 Stad:</span> <span id="api-stad">Nijmegen</span></div>
+    <div class="chip"><span class="label">🌡️ Temperatuur:</span> <span id="api-temp">—</span> °C</div>
+    <div class="chip"><span class="label">☁️ Weer:</span> <span id="api-weer">—</span></div>
+  </div>
+
+  <script>
+    async function updateWeer() {
+      try {
+        const stad = "Nijmegen";
+        const apiKey = "edcacc401aee4d284c73d87a0bc22da5";
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${stad}&units=metric&appid=${apiKey}&lang=nl`;
+
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Kon weerdata niet ophalen");
+
+        const data = await res.json();
+        const temp = Math.round(data.main.temp);
+        const weer = data.weather[0].description;
+
+        const nu = new Date();
+        const datum = nu.toLocaleDateString('nl-NL', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
+        const tijd = nu.toLocaleTimeString('nl-NL', { hour:'2-digit', minute:'2-digit' });
+
+        document.getElementById('api-datum').textContent = datum;
+        document.getElementById('api-tijd').textContent = tijd;
+        document.getElementById('api-temp').textContent = temp;
+        document.getElementById('api-weer').textContent = weer;
+
+      } catch (error) {
+        console.error("Fout bij ophalen API:", error);
+        document.getElementById('api-datum').textContent = "—";
+        document.getElementById('api-tijd').textContent = "—";
+        document.getElementById('api-temp').textContent = "—";
+        document.getElementById('api-weer').textContent = "Fout";
+      }
+    }
+
+    // Initial load
+    updateWeer();
+
+    // Update elke minuut
+    setInterval(updateWeer, 60000);
+  </script>
+<footer>
+  <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;">
+    <div>© <span id="year"></span> portfolio Daan Bleumink</div></body>
+</html>
